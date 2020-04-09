@@ -111,6 +111,7 @@ object FormEntering: TFormEntering
       TabOrder = 3
       Text = #1050#1083#1080#1077#1085#1090#1099
       TextSettings.Font.Size = 20.000000000000000000
+      OnClick = Button3Click
     end
     object Button4: TButton
       StyledSettings = [Family, Style, FontColor]

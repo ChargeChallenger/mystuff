@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Edit, FMX.Controls.Presentation, Unit2, System.hash;
+  FMX.Edit, FMX.Controls.Presentation, Unit2, Unit3, System.hash;
 
 type
   TFormEntering = class(TForm)
@@ -24,6 +24,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,7 +41,6 @@ implementation
 procedure TFormEntering.Button1Click(Sender: TObject);
 var Users: TStringList; i: integer;
 begin
-  FormRegistration.Label1.Text:='οεσ';
   Users:=TStringList.Create;
   Users.LoadFromFile('data/users.txt');
   i:=0;
@@ -63,6 +63,11 @@ end;
 procedure TFormEntering.Button2Click(Sender: TObject);
 begin
   FormRegistration.ShowModal;
+end;
+
+procedure TFormEntering.Button3Click(Sender: TObject);
+begin
+  Form3.ShowModal;
 end;
 
 procedure TFormEntering.FormCreate(Sender: TObject);
