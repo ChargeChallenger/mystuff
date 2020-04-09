@@ -1,0 +1,46 @@
+unit Unit2;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Edit, FMX.Controls.Presentation;
+
+type
+  TFormRegistration = class(TForm)
+    Label1: TLabel;
+    Edit1: TEdit;
+    Label2: TLabel;
+    Edit2: TEdit;
+    Label3: TLabel;
+    Edit3: TEdit;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRegistration: TFormRegistration;
+
+implementation
+
+{$R *.fmx}
+
+procedure TFormRegistration.Button1Click(Sender: TObject);
+var Users: TStringList;
+begin
+  Users:=TStringList.Create;
+  Users.LoadFromFile('data/users.txt');
+  if (Edit1.Text<>'') and (Edit2.Text<>'') and (Edit3.Text<>'') then
+  begin
+
+  end
+  else
+    ShowMessage('Пустые поля!');
+end;
+
+end.
