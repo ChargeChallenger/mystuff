@@ -1,0 +1,43 @@
+unit Unit3;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, System.Rtti,
+  FMX.Grid.Style, FMX.Controls.Presentation, FMX.ScrollBox, FMX.Grid, FMX.Edit,
+  FMX.StdCtrls, FMX.DateTimeCtrls, FMX.Menus;
+
+type
+  TFormClient = class(TForm)
+    Database: TStringGrid;
+    Name: TStringColumn;
+    Address: TStringColumn;
+    Date: TDateColumn;
+    Number: TIntegerColumn;
+    MainMenu: TMainMenu;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    procedure MenuItem2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormClient: TFormClient;
+
+implementation
+
+{$R *.fmx}
+
+
+procedure TFormClient.MenuItem2Click(Sender: TObject);
+var CurrUser: string;
+begin
+  SetCurrentDir('data/'+MenuItem2.Text+'Data');
+
+end;
+
+end.
