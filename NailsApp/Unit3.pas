@@ -38,12 +38,9 @@ var Clients: TStringList; f: TextFile; i,k: Byte;
 begin
   SetCurrentDir('data');
   SetCurrentDir(MenuItem2.Text+'Data');
-  if not FileExists('clients.txt') then
-  begin
-    AssignFile(f, 'clients.txt');
-    Rewrite(f);
-    CloseFile(f);
-  end;
+  AssignFile(f, 'clients.txt');
+  Rewrite(f);
+  CloseFile(f);
   ShowMessage('Сохранено!');
   Clients:=TStringList.Create;
   Clients.LoadFromFile('clients.txt');
@@ -52,7 +49,7 @@ begin
     for k := 0 to Database.ColumnCount-1 do Clients.Add(Database.Cells[k,i]);
   end;
   Clients.SaveToFile('clients.txt');
-  Clients.Destroy;
+  Clients.Free;
 end;
 
 end.

@@ -22,6 +22,7 @@ object FormClient: TFormClient
     Size.Height = 553.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
+    Options = [Editing, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
     Viewport.Width = 814.000000000000000000
     Viewport.Height = 528.000000000000000000
     object Name: TStringColumn
@@ -38,7 +39,7 @@ object FormClient: TFormClient
     end
     object Number: TIntegerColumn
       Header = #1053#1086#1084#1077#1088' '#1090#1077#1083#1077#1092#1086#1085#1072
-      Size.Width = 179.000000000000000000
+      Size.Width = 189.000000000000000000
     end
   end
   object MainMenu: TMainMenu
