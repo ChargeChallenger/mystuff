@@ -22,9 +22,9 @@ object FormClient: TFormClient
     Size.Height = 497.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    Options = [ColLines, RowLines, Tabs, AutoDisplacement]
+    Options = [ColLines, RowLines, Tabs, Header, AutoDisplacement]
     Viewport.Width = 814.000000000000000000
-    Viewport.Height = 493.000000000000000000
+    Viewport.Height = 472.000000000000000000
     object Name: TStringColumn
       Header = #1060#1048#1054
       Size.Width = 289.000000000000000000
@@ -37,8 +37,9 @@ object FormClient: TFormClient
       Header = #1044#1072#1090#1072
       Size.Width = 121.000000000000000000
     end
-    object Number: TStringColumn
-      Size.Width = 189.000000000000000000
+    object Number: TIntegerColumn
+      Header = #1053#1086#1084#1077#1088' '#1090#1077#1083#1077#1092#1086#1085#1072
+      Size.Width = 193.000000000000000000
     end
   end
   object NameEdit: TEdit

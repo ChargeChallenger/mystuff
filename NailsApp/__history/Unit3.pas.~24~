@@ -14,7 +14,7 @@ type
     Name: TStringColumn;
     Address: TStringColumn;
     Date: TDateColumn;
-    Number: TStringColumn;
+    Number: TIntegerColumn;
     NameEdit: TEdit;
     AddressEdit: TEdit;
     DateEdit: TDateEdit;
@@ -45,39 +45,30 @@ implementation
 
 procedure TFormClient.AddBtnClick(Sender: TObject);
 begin
-  if NameEdit.Text='' then ShowMessage('Заполните поле ФИО') else
-  if AddressEdit.Text='' then ShowMessage('Заполните поле адреса') else
-  if NumEdit.Text='' then ShowMessage('Заполните поле номера телефона') else
-  begin
-    Inc(i);
-    NameA[i]:=NameEdit.Text;
-    AddressA[i]:=AddressEdit.Text;
-    DateA[i]:=DateToStr(DateEdit.Date);
-    NumEditA[i]:=NumEdit.Text;
-    Database.Cells[0,i]:=NameA[i];
-    Database.Cells[1,i]:=AddressA[i];
-    Database.Cells[2,i]:=DateA[i];
-    Database.Cells[3,i]:=NumEditA[i];
-    SetCurrentDir('data');
-    SetCurrentDir(Current.Text + 'Data');
-    AssignFile(f, 'Clients.txt');
-    Append(f);
-    Writeln(f, NameA[i]);
-    Writeln(f, AddressA[i]);
-    Writeln(f, DateA[i]);
-    Writeln(f, NumEditA[i]);
-    CloseFile(f);
-    SetCurrentDir('../');
-  end;
+  Inc(i);
+  NameA[i]:=NameEdit.Text;
+  AddressA[i]:=AddressEdit.Text;
+  DateA[i]:=DateToStr(DateEdit.Date);
+  NumEditA[i]:=NumEdit.Text;
+  Database.Cells[0,i]:=NameA[i];
+  Database.Cells[1,i]:=AddressA[i];
+  Database.Cells[2,i]:=DateA[i];
+  Database.Cells[3,i]:=NumEditA[i];
+  SetCurrentDir('data');
+  SetCurrentDir(Current.Text + 'Data');
+  AssignFile(f, 'Clients.txt');
+  Append(f);
+  Writeln(f, NameA[i]);
+  Writeln(f, AddressA[i]);
+  Writeln(f, DateA[i]);
+  Writeln(f, NumEditA[i]);
+  CloseFile(f);
+  SetCurrentDir('../');
 end;
 
 procedure TFormClient.FormShow(Sender: TObject);
 begin
-  Database.Cells[0,0]:='ФИО';
-  Database.Cells[1,0]:='Адрес';
-  Database.Cells[2,0]:='Дата';
-  Database.Cells[3,0]:='Номер телефона';
-  i:=0;
+  i:=-1;
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');
   if not FileExists('Clients.txt') then

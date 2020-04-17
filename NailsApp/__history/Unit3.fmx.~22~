@@ -3,6 +3,7 @@ object FormClient: TFormClient
   Top = 100
   BorderIcons = [biSystemMenu]
   BorderStyle = Single
+  Caption = 'NailsApp - '#1050#1083#1080#1077#1085#1090#1099
   ClientHeight = 590
   ClientWidth = 849
   Position = Designed
@@ -22,9 +23,9 @@ object FormClient: TFormClient
     Size.Height = 497.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    Options = [ColLines, RowLines, Tabs, AutoDisplacement]
+    Options = [Editing, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
     Viewport.Width = 814.000000000000000000
-    Viewport.Height = 493.000000000000000000
+    Viewport.Height = 472.000000000000000000
     object Name: TStringColumn
       Header = #1060#1048#1054
       Size.Width = 289.000000000000000000
@@ -37,8 +38,9 @@ object FormClient: TFormClient
       Header = #1044#1072#1090#1072
       Size.Width = 121.000000000000000000
     end
-    object Number: TStringColumn
-      Size.Width = 189.000000000000000000
+    object Number: TIntegerColumn
+      Header = #1053#1086#1084#1077#1088' '#1090#1077#1083#1077#1092#1086#1085#1072
+      Size.Width = 193.000000000000000000
     end
   end
   object NameEdit: TEdit
@@ -88,6 +90,7 @@ object FormClient: TFormClient
     Size.PlatformDefault = False
     TabOrder = 5
     Text = #1059#1076#1072#1083#1080#1090#1100
+    OnClick = RmvBtnClick
   end
   object Current: TLabel
     Position.X = 8.000000000000000000

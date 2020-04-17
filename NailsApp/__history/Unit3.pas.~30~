@@ -14,7 +14,7 @@ type
     Name: TStringColumn;
     Address: TStringColumn;
     Date: TDateColumn;
-    Number: TStringColumn;
+    Number: TIntegerColumn;
     NameEdit: TEdit;
     AddressEdit: TEdit;
     DateEdit: TDateEdit;
@@ -73,10 +73,6 @@ end;
 
 procedure TFormClient.FormShow(Sender: TObject);
 begin
-  Database.Cells[0,0]:='ФИО';
-  Database.Cells[1,0]:='Адрес';
-  Database.Cells[2,0]:='Дата';
-  Database.Cells[3,0]:='Номер телефона';
   i:=0;
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');

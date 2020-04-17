@@ -14,7 +14,7 @@ type
     Name: TStringColumn;
     Address: TStringColumn;
     Date: TDateColumn;
-    Number: TStringColumn;
+    Number: TIntegerColumn;
     NameEdit: TEdit;
     AddressEdit: TEdit;
     DateEdit: TDateEdit;
