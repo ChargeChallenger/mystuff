@@ -23,22 +23,23 @@ object FormClient: TFormClient
     Size.PlatformDefault = False
     TabOrder = 0
     Options = [ColLines, RowLines, Tabs, AutoDisplacement]
-    Viewport.Width = 814.000000000000000000
-    Viewport.Height = 493.000000000000000000
+    OnSelectCell = DatabaseSelectCell
+    Viewport.Width = 834.000000000000000000
+    Viewport.Height = 497.000000000000000000
     object Name: TStringColumn
       Header = #1060#1048#1054
-      Size.Width = 289.000000000000000000
+      Size.Width = 265.000000000000000000
     end
     object Address: TStringColumn
       Header = #1040#1076#1088#1077#1089
-      Size.Width = 207.000000000000000000
+      Size.Width = 205.000000000000000000
     end
     object Date: TDateColumn
       Header = #1044#1072#1090#1072
       Size.Width = 121.000000000000000000
     end
     object Number: TStringColumn
-      Size.Width = 189.000000000000000000
+      Size.Width = 215.000000000000000000
     end
   end
   object NameEdit: TEdit
@@ -83,11 +84,12 @@ object FormClient: TFormClient
   object RmvBtn: TButton
     Position.X = 456.000000000000000000
     Position.Y = 40.000000000000000000
-    Size.Width = 105.000000000000000000
+    Size.Width = 185.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 5
     Text = #1059#1076#1072#1083#1080#1090#1100
+    OnClick = RmvBtnClick
   end
   object Current: TLabel
     Position.X = 8.000000000000000000

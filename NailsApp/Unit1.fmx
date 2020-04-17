@@ -1,7 +1,7 @@
 object FormEntering: TFormEntering
   Left = 0
   Top = 0
-  Caption = 'NailApp - '#1042#1093#1086#1076
+  Caption = 'NailsApp - '#1042#1093#1086#1076
   ClientHeight = 355
   ClientWidth = 479
   FormFactor.Width = 320
