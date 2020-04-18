@@ -1,0 +1,55 @@
+object FormClient: TFormClient
+  Left = 100
+  Top = 100
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'NailsApp - '#1050#1083#1080#1077#1085#1090#1099
+  ClientHeight = 590
+  ClientWidth = 849
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  Left = 100
+  Top = 100
+  DesignerMasterStyle = 0
+  object Database: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 834.000000000000000000
+    Size.Height = 553.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 814.000000000000000000
+    Viewport.Height = 528.000000000000000000
+    object Name: TStringColumn
+      Header = #1060#1048#1054
+      Size.Width = 289.000000000000000000
+    end
+    object Address: TStringColumn
+      Header = #1040#1076#1088#1077#1089
+      Size.Width = 207.000000000000000000
+    end
+    object Date: TDateColumn
+      Header = #1044#1072#1090#1072
+      Size.Width = 121.000000000000000000
+    end
+    object Number: TIntegerColumn
+      Header = #1053#1086#1084#1077#1088' '#1090#1077#1083#1077#1092#1086#1085#1072
+      Size.Width = 179.000000000000000000
+    end
+  end
+  object MainMenu: TMainMenu
+    Left = 792
+    Top = 224
+    object MenuItem1: TMenuItem
+      Text = #1057#1086#1093#1088#1072#1085#1080#1090#1100
+      object MenuItem2: TMenuItem
+        Locked = True
+        OnClick = MenuItem2Click
+      end
+    end
+  end
+end

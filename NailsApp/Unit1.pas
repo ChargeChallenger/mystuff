@@ -53,7 +53,8 @@ begin
               Panel2.Enabled:=true;
               ShowMessage('Вы вошли как '+Edit1.Text);
               CurrentUser:=Edit1.Text;
-              FormClient.CurrentUser.Text:='База данных: ' + CurrentUser;
+              FormClient.Caption:='NailsApp - Клиенты - ' + CurrentUser;
+              FormClient.MenuItem2.Text:=CurrentUser;
               exit;
            end;
         end;
