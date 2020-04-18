@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
+<<<<<<< Updated upstream
     <Transaction>1899.12.30 00:00:00.000.944,=C:\Users\datmcl\Desktop\NailsApp\Unit3.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.307,C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\ngorb\Google Диск\Колледж\2 курс\Белый\Основы алгоритмизации и программирования\NailsApp\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.882,=C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
@@ -9,8 +10,28 @@
     <Transaction>1899.12.30 00:00:00.000.328,C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\ngorb\Google Диск\Колледж\2 курс\Белый\Основы алгоритмизации и программирования\NailsApp\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.052,=C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.328,C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit2.fmx=C:\Users\ngorb\Google Диск\Колледж\2 курс\Белый\Основы алгоритмизации и программирования\NailsApp\Unit2.fmx</Transaction>
+=======
+    <Transaction>1899.12.30 00:00:00.000.307,C:\Users\ngorb\Google Диск\Колледж\2 курс\Белый\Основы алгоритмизации и программирования\NailsApp\Unit1.pas=C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.307,C:\Users\ngorb\Google Диск\Колледж\2 курс\Белый\Основы алгоритмизации и программирования\NailsApp\Unit1.fmx=C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.328,C:\Users\ngorb\Google Диск\Колледж\2 курс\Белый\Основы алгоритмизации и программирования\NailsApp\Unit2.pas=C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.328,C:\Users\ngorb\Google Диск\Колледж\2 курс\Белый\Основы алгоритмизации и программирования\NailsApp\Unit2.fmx=C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit2.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.882,=C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.944,=C:\Users\datmcl\Desktop\NailsApp\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.244,C:\Users\ngorb\Google Диск\Колледж\2 курс\Белый\Основы алгоритмизации и программирования\NailsApp\Project1.dproj=C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.052,=C:\Users\ngorb\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.268,=D:\sho\mystuff\NailsApp\Unit4.pas</Transaction>
+>>>>>>> Stashed changes
   </Transactions>
 	<ActiveMobileDevice>
 		<NoProfile iOSSimulator="iPhone5"/>
-	</ActiveMobileDevice>
+	</ActiveMobileDevice>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Unit1.pas"/>
+    <File Path="Unit1.fmx"/>
+    <File Path="Unit2.pas"/>
+    <File Path="Unit2.fmx"/>
+    <File Path="Unit3.pas"/>
+    <File Path="Unit3.fmx"/>
+    <File Path="Unit4.pas"/>
+    <File Path="Unit4.fmx"/>
+  </ProjectSortOrder>
 </BorlandProject>

@@ -5,8 +5,7 @@ uses
   FMX.Forms,
   Unit1 in 'Unit1.pas' {FormEntering},
   Unit2 in 'Unit2.pas' {FormRegistration},
-  Unit3 in 'Unit3.pas' {FormClient},
-  Unit4 in 'Unit4.pas' {FormPricelist};
+  Unit3 in 'Unit3.pas' {FormClient};
 
 {$R *.res}
 

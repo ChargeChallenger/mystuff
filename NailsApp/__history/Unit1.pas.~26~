@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Edit, FMX.Controls.Presentation, Unit2, System.hash;
+  FMX.Edit, FMX.Controls.Presentation, Unit2, Unit3, System.hash;
 
 type
   TFormEntering = class(TForm)
@@ -24,6 +24,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,7 +39,7 @@ implementation
 {$R *.fmx}
 
 procedure TFormEntering.Button1Click(Sender: TObject);
-var Users: TStringList; i: integer;
+var Users: TStringList; i: integer; CurrentUser: string;
 begin
   Users:=TStringList.Create;
   Users.LoadFromFile('data/users.txt');
@@ -51,6 +52,9 @@ begin
            begin
               Panel2.Enabled:=true;
               ShowMessage('Вы вошли как '+Edit1.Text);
+              CurrentUser:=Edit1.Text;
+              FormClient.Caption:='NailsApp - Клиенты - ' + CurrentUser;
+              FormClient.Current.Text:=CurrentUser;
               exit;
            end;
         end;
@@ -62,6 +66,11 @@ end;
 procedure TFormEntering.Button2Click(Sender: TObject);
 begin
   FormRegistration.ShowModal;
+end;
+
+procedure TFormEntering.Button3Click(Sender: TObject);
+begin
+  FormClient.ShowModal;
 end;
 
 procedure TFormEntering.FormCreate(Sender: TObject);
