@@ -54,7 +54,7 @@ begin
               ShowMessage('Вы вошли как '+Edit1.Text);
               CurrentUser:=Edit1.Text;
               FormClient.Caption:='NailsApp - Клиенты - ' + CurrentUser;
-              FormClient.MenuItem2.Text:=CurrentUser;
+              FormClient.Current.Text:=CurrentUser;
               exit;
            end;
         end;
