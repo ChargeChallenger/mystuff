@@ -27,11 +27,11 @@ object FormPricelist: TFormPricelist
     Viewport.Width = 501.000000000000000000
     Viewport.Height = 488.000000000000000000
     object Name: TStringColumn
-      Header = #1060#1048#1054
+      Header = #1091#1089#1083#1091#1075#1072
       Size.Width = 289.000000000000000000
     end
     object Address: TStringColumn
-      Header = #1040#1076#1088#1077#1089
+      Header = #1057#1090#1086#1080#1084#1086#1089#1090#1100' '
       Size.Width = 207.000000000000000000
     end
   end
@@ -45,9 +45,9 @@ object FormPricelist: TFormPricelist
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
   end
-  object AddressEdit: TEdit
+  object PriceEdit: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 3
+    TabOrder = 2
     MaxLength = 100
     Position.X = 464.000000000000000000
     Position.Y = 8.000000000000000000
@@ -61,7 +61,7 @@ object FormPricelist: TFormPricelist
     Size.Width = 105.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 4
+    TabOrder = 3
     Text = #1044#1086#1073#1072#1074#1080#1090#1100
     OnClick = AddBtnClick
   end
@@ -71,7 +71,7 @@ object FormPricelist: TFormPricelist
     Size.Width = 105.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 5
+    TabOrder = 4
     Text = #1059#1076#1072#1083#1080#1090#1100
     OnClick = RmvBtnClick
   end
@@ -79,16 +79,6 @@ object FormPricelist: TFormPricelist
     Position.X = 8.000000000000000000
     Position.Y = 568.000000000000000000
     Text = 'Current'
-    TabOrder = 6
-  end
-  object DeliteEdit: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 2
-    MaxLength = 100
-    Position.X = 512.000000000000000000
-    Position.Y = 40.000000000000000000
-    Size.Width = 25.000000000000000000
-    Size.Height = 22.000000000000000000
-    Size.PlatformDefault = False
+    TabOrder = 5
   end
 end

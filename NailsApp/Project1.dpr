@@ -15,5 +15,6 @@ begin
   Application.CreateForm(TFormEntering, FormEntering);
   Application.CreateForm(TFormRegistration, FormRegistration);
   Application.CreateForm(TFormClient, FormClient);
+  Application.CreateForm(TFormPricelist, FormPricelist);
   Application.Run;
 end.
