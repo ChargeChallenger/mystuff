@@ -12,7 +12,6 @@ type
   TFormPricelist = class(TForm)
     Database: TStringGrid;
     Name: TStringColumn;
-    price: TStringColumn;
     NameEdit: TEdit;
     PriceEdit: TEdit;
     AddBtn: TButton;
@@ -27,14 +26,14 @@ type
 
   private
     { Private declarations }
-  public
+ public
     { Public declarations }
   end;
 
 var
-  FormPricelist: TFormPricelist;
+  FormPriceList: TFormPriceList;
   NameA: array [0..1000] of string;
-  priceA: array [0..1000] of string;
+  PriceA: array [0..1000] of string;
   Row4Del: Integer;
   f:TextFile;
   i:Integer;
@@ -43,14 +42,14 @@ implementation
 {$R *.fmx}
 
 
-procedure TFormPricelist.DatabaseSelectCell(Sender: TObject; const ACol,
+procedure TFormPriceList.DatabaseSelectCell(Sender: TObject; const ACol,
   ARow: Integer; var CanSelect: Boolean);
 begin
-  FormPricelist.RmvBtn.Text:='Удалить выбранную строку';
+  FormPriceList.RmvBtn.Text:='Удалить выбранную стро';
   Row4Del:=ARow;
 end;
 
-procedure TFormPricelist.DeleteRow(ARow: Integer);
+procedure TFormPriceList.DeleteRow(ARow: Integer);
 var i, j: Integer;
 begin
 with Database do
@@ -64,64 +63,64 @@ with Database do
   end;
 end;
 
-procedure TFormPricelist.AddBtnClick(Sender: TObject);
+procedure TFormPriceList.AddBtnClick(Sender: TObject);
 begin
   if NameEdit.Text='' then ShowMessage('Заполните поле услуги') else
   if PriceEdit.Text='' then ShowMessage('Заполните поле цены') else
   begin
     Inc(i);
     NameA[i]:=NameEdit.Text;
-    priceA[i]:=PriceEdit.Text;
+    PriceA[i]:=PriceEdit.Text;
     Database.Cells[0,i]:=NameA[i];
-    Database.Cells[1,i]:=priceA[i];
+    Database.Cells[1,i]:=PriceA[i];
     SetCurrentDir('data');
     SetCurrentDir(Current.Text + 'Data');
     AssignFile(f, 'Price.txt');
     Append(f);
     Writeln(f, NameA[i]);
-    Writeln(f, priceA[i]);
+    Writeln(f, PriceA[i]);
     CloseFile(f);
     SetCurrentDir('../');
   end;
 end;
 
-procedure TFormPricelist.RmvBtnClick(Sender: TObject);
+procedure TFormPriceList.RmvBtnClick(Sender: TObject);
 var Clients: TStringList;
 begin
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');
   Clients:=TStringList.Create;
-  Clients.LoadFromFile('price.txt');
+  Clients.LoadFromFile('Price.txt');
   Clients.Delete(Row4Del);
   Clients.Delete(Row4Del);
-  Clients.Delete(Row4Del);
-  Clients.Delete(Row4Del);
-  Clients.SaveToFile('price.txt');
+  Clients.SaveToFile('Price.txt');
   Clients.Free;
-  FormPricelist.DeleteRow(Row4Del);
-  i:=i-1;
+  FormPriceList.DeleteRow(Row4Del);
+ i:=i-1;
 end;
 
-procedure TFormPricelist.FormShow(Sender: TObject);
+procedure TFormPriceList.FormShow(Sender: TObject);
 begin
-  i:=-1;
+  Database.Cells[0,0]:='ноготочки';
+  Database.Cells[1,0]:='500';
+  i:=0;
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');
-  if not FileExists('price.txt') then
+  if not FileExists('Price.txt') then
   begin
   ShowMessage('Нет файла базы данных. Создаем...');
-  AssignFile(f, 'price.txt');
+  AssignFile(f, 'Price.txt');
   Rewrite(f);
   CloseFile(f);
   end;
-  AssignFile(f, 'price.txt');
+  AssignFile(f, 'Price.txt');
   Reset(f);
   while not EOF(f) do
   begin
     Readln(f, NameA[i]);
-    Readln(f, priceA[i]);
+    Readln(f, PriceA[i]);
     Database.Cells[0,i+1]:=NameA[i];
-    Database.Cells[1,i+1]:=priceA[i];
+    Database.Cells[1,i+1]:=PriceA[i];
     Inc(i);
   end;
   CloseFile(f);
