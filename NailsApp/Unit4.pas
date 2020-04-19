@@ -10,9 +10,9 @@ uses
 
 type
   TFormPricelist = class(TForm)
- Database: TStringGrid;
+    Database: TStringGrid;
     Name: TStringColumn;
-    Address: TStringColumn;
+    price: TStringColumn;
     NameEdit: TEdit;
     PriceEdit: TEdit;
     AddBtn: TButton;
@@ -46,7 +46,7 @@ implementation
 procedure TFormPricelist.DatabaseSelectCell(Sender: TObject; const ACol,
   ARow: Integer; var CanSelect: Boolean);
 begin
-  FormPricelist.RmvBtn.Text:='Удалить выбранную стро';
+  FormPricelist.RmvBtn.Text:='Удалить выбранную строку';
   Row4Del:=ARow;
 end;
 
@@ -76,7 +76,7 @@ begin
     Database.Cells[1,i]:=priceA[i];
     SetCurrentDir('data');
     SetCurrentDir(Current.Text + 'Data');
-    AssignFile(f, 'Clients.txt');
+    AssignFile(f, 'Price.txt');
     Append(f);
     Writeln(f, NameA[i]);
     Writeln(f, priceA[i]);
@@ -99,11 +99,12 @@ begin
   Clients.SaveToFile('price.txt');
   Clients.Free;
   FormPricelist.DeleteRow(Row4Del);
+  i:=i-1;
 end;
 
 procedure TFormPricelist.FormShow(Sender: TObject);
 begin
-  i:=0;
+  i:=-1;
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');
   if not FileExists('price.txt') then

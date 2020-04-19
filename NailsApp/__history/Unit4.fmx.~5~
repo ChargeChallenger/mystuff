@@ -24,13 +24,13 @@ object FormPricelist: TFormPricelist
     Size.PlatformDefault = False
     TabOrder = 0
     Options = [Editing, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
-    Viewport.Width = 501.000000000000000000
-    Viewport.Height = 488.000000000000000000
+    Viewport.Width = 521.000000000000000000
+    Viewport.Height = 513.000000000000000000
     object Name: TStringColumn
       Header = #1091#1089#1083#1091#1075#1072
       Size.Width = 289.000000000000000000
     end
-    object price: TStringColumn
+    object Address: TStringColumn
       Header = #1057#1090#1086#1080#1084#1086#1089#1090#1100' '
       Size.Width = 207.000000000000000000
     end
