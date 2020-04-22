@@ -3,8 +3,8 @@ object FormClient: TFormClient
   Top = 100
   BorderIcons = [biSystemMenu]
   BorderStyle = Single
-  ClientHeight = 590
-  ClientWidth = 849
+  ClientHeight = 591
+  ClientWidth = 858
   Position = Designed
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -16,29 +16,34 @@ object FormClient: TFormClient
   object Database: TStringGrid
     CanFocus = True
     ClipChildren = True
-    Position.X = 8.000000000000000000
-    Position.Y = 72.000000000000000000
-    Size.Width = 834.000000000000000000
-    Size.Height = 497.000000000000000000
+    Position.X = 24.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 777.000000000000000000
+    Size.Height = 465.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
+    TabStop = False
     Options = [ColLines, RowLines, Tabs, AutoDisplacement]
     OnSelectCell = DatabaseSelectCell
-    Viewport.Width = 834.000000000000000000
-    Viewport.Height = 497.000000000000000000
+    Viewport.Width = 757.000000000000000000
+    Viewport.Height = 445.000000000000000000
     object Name: TStringColumn
+      Locked = True
       Header = #1060#1048#1054
       Size.Width = 265.000000000000000000
     end
     object Address: TStringColumn
-      Header = #1040#1076#1088#1077#1089
+      Locked = True
+      Header = #1072#1076#1088#1077#1089
       Size.Width = 205.000000000000000000
     end
     object Date: TDateColumn
+      Locked = True
       Header = #1044#1072#1090#1072
       Size.Width = 121.000000000000000000
     end
     object Number: TStringColumn
+      Header = #1090#1077#1083#1077#1092#1086#1085
       Size.Width = 215.000000000000000000
     end
   end

@@ -1,9 +1,8 @@
-object FormPricelist: TFormPricelist
+object FormClient: TFormClient
   Left = 100
   Top = 100
   BorderIcons = [biSystemMenu]
   BorderStyle = Single
-  Caption = 'NailsApp - '#1055#1088#1072#1081#1089#1083#1080#1089#1090
   ClientHeight = 590
   ClientWidth = 849
   Position = Designed
@@ -17,43 +16,60 @@ object FormPricelist: TFormPricelist
   object Database: TStringGrid
     CanFocus = True
     ClipChildren = True
-    Position.X = 144.000000000000000000
+    Position.X = 8.000000000000000000
     Position.Y = 72.000000000000000000
-    Size.Width = 521.000000000000000000
-    Size.Height = 513.000000000000000000
+    Size.Width = 834.000000000000000000
+    Size.Height = 497.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    Options = [Editing, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
-    Viewport.Width = 521.000000000000000000
-    Viewport.Height = 513.000000000000000000
+    Options = [ColLines, RowLines, Tabs, AutoDisplacement]
+    OnSelectCell = DatabaseSelectCell
+    Viewport.Width = 814.000000000000000000
+    Viewport.Height = 493.000000000000000000
     object Name: TStringColumn
-      Header = #1091#1089#1083#1091#1075#1072
-      Size.Width = 289.000000000000000000
+      Header = #1060#1048#1054
+      Size.Width = 265.000000000000000000
     end
-    object price: TStringColumn
-      Header = #1057#1090#1086#1080#1084#1086#1089#1090#1100' '
-      Size.Width = 207.000000000000000000
+    object Address: TStringColumn
+      Header = #1040#1076#1088#1077#1089
+      Size.Width = 205.000000000000000000
+    end
+    object Date: TDateColumn
+      Header = #1044#1072#1090#1072
+      Size.Width = 121.000000000000000000
+    end
+    object Number: TStringColumn
+      Size.Width = 215.000000000000000000
     end
   end
   object NameEdit: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 1
     MaxLength = 100
-    Position.X = 144.000000000000000000
+    Position.X = 8.000000000000000000
     Position.Y = 8.000000000000000000
     Size.Width = 289.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
   end
-  object PriceEdit: TEdit
+  object AddressEdit: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 2
     MaxLength = 100
-    Position.X = 464.000000000000000000
+    Position.X = 304.000000000000000000
     Position.Y = 8.000000000000000000
     Size.Width = 201.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
+  end
+  object DateEdit: TDateEdit
+    Date = 43938.000000000000000000
+    Position.X = 512.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
   end
   object AddBtn: TButton
     Position.X = 248.000000000000000000
@@ -61,17 +77,17 @@ object FormPricelist: TFormPricelist
     Size.Width = 105.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 3
+    TabOrder = 4
     Text = #1044#1086#1073#1072#1074#1080#1090#1100
     OnClick = AddBtnClick
   end
   object RmvBtn: TButton
-    Position.X = 552.000000000000000000
+    Position.X = 456.000000000000000000
     Position.Y = 40.000000000000000000
-    Size.Width = 105.000000000000000000
+    Size.Width = 185.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 4
+    TabOrder = 5
     Text = #1059#1076#1072#1083#1080#1090#1100
     OnClick = RmvBtnClick
   end
@@ -79,6 +95,15 @@ object FormPricelist: TFormPricelist
     Position.X = 8.000000000000000000
     Position.Y = 568.000000000000000000
     Text = 'Current'
-    TabOrder = 5
+    TabOrder = 6
+  end
+  object NumEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 7
+    Position.X = 632.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 209.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
   end
 end

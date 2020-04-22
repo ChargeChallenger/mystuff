@@ -14,7 +14,7 @@ type
     Name: TStringColumn;
     Address: TStringColumn;
     Date: TDateColumn;
-    Number: TIntegerColumn;
+    Number: TStringColumn;
     NameEdit: TEdit;
     AddressEdit: TEdit;
     DateEdit: TDateEdit;
@@ -24,6 +24,11 @@ type
     NumEdit: TEdit;
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure DeleteRow(ARow: Integer);
+    procedure DatabaseSelectCell(Sender: TObject; const ACol, ARow: Integer;
+      var CanSelect: Boolean);
+    procedure RmvBtnClick(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -36,12 +41,34 @@ var
   AddressA: array [0..1000] of string;
   DateA: array [0..1000] of string;
   NumEditA: array [0..1000] of string;
+  Row4Del: Integer;
   f:TextFile;
   i:Integer;
 implementation
 
 {$R *.fmx}
 
+
+procedure TFormClient.DatabaseSelectCell(Sender: TObject; const ACol,
+  ARow: Integer; var CanSelect: Boolean);
+begin
+  FormClient.RmvBtn.Text:='Удалить выбранную стро';
+  Row4Del:=ARow;
+end;
+
+procedure TFormClient.DeleteRow(ARow: Integer);
+var i, j: Integer;
+begin
+with Database do
+  begin
+    for i:=ARow+1 to RowCount-1 do
+    for j:=0 to Database.ColumnCount-1 do
+      Cells[j, i-1]:=Cells[j, i];
+    for i:=0 to Database.ColumnCount-1 do
+      Cells[i, RowCount-1]:='';
+    RowCount:=RowCount-1;
+  end;
+end;
 
 procedure TFormClient.AddBtnClick(Sender: TObject);
 begin
@@ -69,6 +96,23 @@ begin
     CloseFile(f);
     SetCurrentDir('../');
   end;
+end;
+
+procedure TFormClient.RmvBtnClick(Sender: TObject);
+var Clients: TStringList;
+begin
+  SetCurrentDir('data');
+  SetCurrentDir(Current.Text + 'Data');
+  Clients:=TStringList.Create;
+  Clients.LoadFromFile('Clients.txt');
+  Clients.Delete(Row4Del);
+  Clients.Delete(Row4Del);
+  Clients.Delete(Row4Del);
+  Clients.Delete(Row4Del);
+  Clients.SaveToFile('Clients.txt');
+  Clients.Free;
+  FormClient.DeleteRow(Row4Del);
+ i:=i-1;
 end;
 
 procedure TFormClient.FormShow(Sender: TObject);

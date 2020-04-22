@@ -1,4 +1,4 @@
-unit Unit3;
+unit Unit4;
 
 interface
 
@@ -9,19 +9,14 @@ uses
   FMX.StdCtrls, FMX.DateTimeCtrls, FMX.Menus, FMX.EditBox, FMX.NumberBox;
 
 type
-  TFormClient = class(TForm)
+  TFormPricelist = class(TForm)
     Database: TStringGrid;
     Name: TStringColumn;
-    Address: TStringColumn;
-    Date: TDateColumn;
-    Number: TStringColumn;
     NameEdit: TEdit;
-    AddressEdit: TEdit;
-    DateEdit: TDateEdit;
+    PriceEdit: TEdit;
     AddBtn: TButton;
     RmvBtn: TButton;
     Current: TLabel;
-    NumEdit: TEdit;
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);
@@ -31,16 +26,14 @@ type
 
   private
     { Private declarations }
-  public
+ public
     { Public declarations }
   end;
 
 var
-  FormClient: TFormClient;
+  FormPriceList: TFormPriceList;
   NameA: array [0..1000] of string;
-  AddressA: array [0..1000] of string;
-  DateA: array [0..1000] of string;
-  NumEditA: array [0..1000] of string;
+  PriceA: array [0..1000] of string;
   Row4Del: Integer;
   f:TextFile;
   i:Integer;
@@ -49,14 +42,14 @@ implementation
 {$R *.fmx}
 
 
-procedure TFormClient.DatabaseSelectCell(Sender: TObject; const ACol,
+procedure TFormPriceList.DatabaseSelectCell(Sender: TObject; const ACol,
   ARow: Integer; var CanSelect: Boolean);
 begin
-  FormClient.RmvBtn.Text:='Удалить выбранную стро';
+  FormPriceList.RmvBtn.Text:='Удалить выбранную стро';
   Row4Del:=ARow;
 end;
 
-procedure TFormClient.DeleteRow(ARow: Integer);
+procedure TFormPriceList.DeleteRow(ARow: Integer);
 var i, j: Integer;
 begin
 with Database do
@@ -70,76 +63,64 @@ with Database do
   end;
 end;
 
-procedure TFormClient.AddBtnClick(Sender: TObject);
+procedure TFormPriceList.AddBtnClick(Sender: TObject);
 begin
-  if NameEdit.Text='' then ShowMessage('Заполните поле ФИО') else
-  if AddressEdit.Text='' then ShowMessage('Заполните поле адреса') else
-  if NumEdit.Text='' then ShowMessage('Заполните поле номера телефона') else
+  if NameEdit.Text='' then ShowMessage('Заполните поле услуги') else
+  if PriceEdit.Text='' then ShowMessage('Заполните поле цены') else
   begin
-
+    Inc(i);
     NameA[i]:=NameEdit.Text;
-    AddressA[i]:=AddressEdit.Text;
-    DateA[i]:=DateToStr(DateEdit.Date);
-    NumEditA[i]:=NumEdit.Text;
+    PriceA[i]:=PriceEdit.Text;
     Database.Cells[0,i]:=NameA[i];
-    Database.Cells[1,i]:=AddressA[i];
-    Database.Cells[2,i]:=DateA[i];
-    Database.Cells[3,i]:=NumEditA[i];
+    Database.Cells[1,i]:=PriceA[i];
     SetCurrentDir('data');
     SetCurrentDir(Current.Text + 'Data');
-    AssignFile(f, 'Clients.txt');
+    AssignFile(f, 'Price.txt');
     Append(f);
     Writeln(f, NameA[i]);
-    Writeln(f, AddressA[i]);
-    Writeln(f, DateA[i]);
-    Writeln(f, NumEditA[i]);
+    Writeln(f, PriceA[i]);
     CloseFile(f);
     SetCurrentDir('../');
-    Inc(i);
   end;
 end;
 
-procedure TFormClient.RmvBtnClick(Sender: TObject);
+procedure TFormPriceList.RmvBtnClick(Sender: TObject);
 var Clients: TStringList;
 begin
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');
   Clients:=TStringList.Create;
-  Clients.LoadFromFile('Clients.txt');
+  Clients.LoadFromFile('Price.txt');
   Clients.Delete(Row4Del);
   Clients.Delete(Row4Del);
-  Clients.Delete(Row4Del);
-  Clients.Delete(Row4Del);
-  Clients.SaveToFile('Clients.txt');
+  Clients.SaveToFile('Price.txt');
   Clients.Free;
-  FormClient.DeleteRow(Row4Del);
+  FormPriceList.DeleteRow(Row4Del);
  i:=i-1;
 end;
 
-procedure TFormClient.FormShow(Sender: TObject);
+procedure TFormPriceList.FormShow(Sender: TObject);
 begin
+  Database.Cells[0,0]:='ноготочки';
+  Database.Cells[1,0]:='500';
   i:=0;
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');
-  if not FileExists('Clients.txt') then
+  if not FileExists('Price.txt') then
   begin
   ShowMessage('Нет файла базы данных. Создаем...');
-  AssignFile(f, 'Clients.txt');
+  AssignFile(f, 'Price.txt');
   Rewrite(f);
   CloseFile(f);
   end;
-  AssignFile(f, 'Clients.txt');
+  AssignFile(f, 'Price.txt');
   Reset(f);
   while not EOF(f) do
   begin
     Readln(f, NameA[i]);
-    Readln(f, AddressA[i]);
-    Readln(f, DateA[i]);
-    Readln(f, NumEditA[i]);
+    Readln(f, PriceA[i]);
     Database.Cells[0,i+1]:=NameA[i];
-    Database.Cells[1,i+1]:=AddressA[i];
-    Database.Cells[2,i+1]:=DateA[i];
-    Database.Cells[3,i+1]:=NumEditA[i];
+    Database.Cells[1,i+1]:=PriceA[i];
     Inc(i);
   end;
   CloseFile(f);

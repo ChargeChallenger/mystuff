@@ -68,7 +68,6 @@ begin
   if NameEdit.Text='' then ShowMessage('Заполните поле услуги') else
   if PriceEdit.Text='' then ShowMessage('Заполните поле цены') else
   begin
-    Inc(i);
     NameA[i]:=NameEdit.Text;
     PriceA[i]:=PriceEdit.Text;
     Database.Cells[0,i]:=NameA[i];
@@ -81,6 +80,7 @@ begin
     Writeln(f, PriceA[i]);
     CloseFile(f);
     SetCurrentDir('../');
+    Inc(i);
   end;
 end;
 
@@ -101,8 +101,6 @@ end;
 
 procedure TFormPriceList.FormShow(Sender: TObject);
 begin
-  Database.Cells[0,0]:='ноготочки';
-  Database.Cells[1,0]:='500';
   i:=0;
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');
