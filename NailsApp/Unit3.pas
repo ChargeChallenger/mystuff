@@ -25,8 +25,6 @@ type
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);
-    procedure DatabaseSelectCell(Sender: TObject; const ACol, ARow: Integer;
-      var CanSelect: Boolean);
     procedure RmvBtnClick(Sender: TObject);
 
   private
@@ -49,19 +47,12 @@ implementation
 {$R *.fmx}
 
 
-procedure TFormClient.DatabaseSelectCell(Sender: TObject; const ACol,
-  ARow: Integer; var CanSelect: Boolean);
-begin
-  FormClient.RmvBtn.Text:='Удалить выбранную стро';
-  Row4Del:=ARow;
-end;
-
 procedure TFormClient.DeleteRow(ARow: Integer);
 var i, j: Integer;
 begin
 with Database do
   begin
-    for i:=ARow+1 to RowCount-1 do
+    for i:=ARow+2 to RowCount-1 do
     for j:=0 to Database.ColumnCount-1 do
       Cells[j, i-1]:=Cells[j, i];
     for i:=0 to Database.ColumnCount-1 do
@@ -76,7 +67,7 @@ begin
   if AddressEdit.Text='' then ShowMessage('Заполните поле адреса') else
   if NumEdit.Text='' then ShowMessage('Заполните поле номера телефона') else
   begin
-
+    Inc(i);
     NameA[i]:=NameEdit.Text;
     AddressA[i]:=AddressEdit.Text;
     DateA[i]:=DateToStr(DateEdit.Date);
@@ -95,7 +86,6 @@ begin
     Writeln(f, NumEditA[i]);
     CloseFile(f);
     SetCurrentDir('../');
-    Inc(i);
   end;
 end;
 
@@ -113,12 +103,16 @@ begin
   Clients.SaveToFile('Clients.txt');
   Clients.Free;
   FormClient.DeleteRow(Row4Del);
- i:=i-1;
+  i:=i-1;
 end;
 
 procedure TFormClient.FormShow(Sender: TObject);
 begin
   i:=0;
+  Database.Cells[0,0]:='ФИО';
+  Database.Cells[1,0]:='Адрес';
+  Database.Cells[2,0]:='Дата';
+  Database.Cells[3,0]:='Номер';
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');
   if not FileExists('Clients.txt') then

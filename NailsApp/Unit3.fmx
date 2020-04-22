@@ -4,7 +4,7 @@ object FormClient: TFormClient
   BorderIcons = [biSystemMenu]
   BorderStyle = Single
   ClientHeight = 591
-  ClientWidth = 858
+  ClientWidth = 849
   Position = Designed
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -16,17 +16,16 @@ object FormClient: TFormClient
   object Database: TStringGrid
     CanFocus = True
     ClipChildren = True
-    Position.X = 24.000000000000000000
-    Position.Y = 80.000000000000000000
-    Size.Width = 777.000000000000000000
-    Size.Height = 465.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 833.000000000000000000
+    Size.Height = 497.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     TabStop = False
     Options = [ColLines, RowLines, Tabs, AutoDisplacement]
-    OnSelectCell = DatabaseSelectCell
-    Viewport.Width = 757.000000000000000000
-    Viewport.Height = 445.000000000000000000
+    Viewport.Width = 813.000000000000000000
+    Viewport.Height = 493.000000000000000000
     object Name: TStringColumn
       Locked = True
       Header = #1060#1048#1054
@@ -89,7 +88,7 @@ object FormClient: TFormClient
   object RmvBtn: TButton
     Position.X = 456.000000000000000000
     Position.Y = 40.000000000000000000
-    Size.Width = 185.000000000000000000
+    Size.Width = 105.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 5
