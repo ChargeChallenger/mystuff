@@ -135,6 +135,7 @@ object FormEntering: TFormEntering
       TabOrder = 1
       Text = #1043#1088#1072#1092#1080#1082
       TextSettings.Font.Size = 20.000000000000000000
+      OnClick = Button5Click
     end
   end
 end

@@ -26,6 +26,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,6 +39,8 @@ var
 implementation
 
 {$R *.fmx}
+
+uses Unit5;
 
 procedure TFormEntering.Button1Click(Sender: TObject);
 var Users: TStringList; i: integer; CurrentUser: string;
@@ -77,6 +80,11 @@ end;
 procedure TFormEntering.Button4Click(Sender: TObject);
 begin
 FormPricelist.ShowModal;
+end;
+
+procedure TFormEntering.Button5Click(Sender: TObject);
+begin
+  Form5.Show;
 end;
 
 procedure TFormEntering.FormCreate(Sender: TObject);
