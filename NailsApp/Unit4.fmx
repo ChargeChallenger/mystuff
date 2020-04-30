@@ -14,27 +14,6 @@ object FormPricelist: TFormPricelist
   Left = 100
   Top = 100
   DesignerMasterStyle = 0
-  object Database: TStringGrid
-    CanFocus = True
-    ClipChildren = True
-    Position.X = 144.000000000000000000
-    Position.Y = 72.000000000000000000
-    Size.Width = 521.000000000000000000
-    Size.Height = 513.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 0
-    Options = [Editing, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
-    Viewport.Width = 521.000000000000000000
-    Viewport.Height = 513.000000000000000000
-    object Name: TStringColumn
-      Header = #1091#1089#1083#1091#1075#1072
-      Size.Width = 289.000000000000000000
-    end
-    object price: TStringColumn
-      Header = #1057#1090#1086#1080#1084#1086#1089#1090#1100' '
-      Size.Width = 207.000000000000000000
-    end
-  end
   object NameEdit: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 1
@@ -80,5 +59,29 @@ object FormPricelist: TFormPricelist
     Position.Y = 568.000000000000000000
     Text = 'Current'
     TabOrder = 5
+  end
+  object Database: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 96.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 657.000000000000000000
+    Size.Height = 497.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    TabStop = False
+    Options = [ColLines, RowLines, Tabs, AutoDisplacement]
+    Viewport.Width = 637.000000000000000000
+    Viewport.Height = 477.000000000000000000
+    object Name: TStringColumn
+      Locked = True
+      Header = #1060#1048#1054
+      Size.Width = 385.000000000000000000
+    end
+    object Price: TStringColumn
+      Locked = True
+      Header = #1072#1076#1088#1077#1089
+      Size.Width = 263.000000000000000000
+    end
   end
 end
