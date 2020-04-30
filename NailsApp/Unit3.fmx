@@ -88,8 +88,8 @@ object FormClient: TFormClient
     TabOrder = 0
     TabStop = False
     Options = [ColLines, RowLines, Tabs, AutoDisplacement]
-    Viewport.Width = 833.000000000000000000
-    Viewport.Height = 497.000000000000000000
+    Viewport.Width = 813.000000000000000000
+    Viewport.Height = 493.000000000000000000
     object Name: TStringColumn
       Locked = True
       Header = #1060#1048#1054

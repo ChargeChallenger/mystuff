@@ -86,6 +86,7 @@ begin
     Writeln(f, NumEditA[i]);
     CloseFile(f);
     SetCurrentDir('../');
+    SetCurrentDir('../');
   end;
 end;
 
