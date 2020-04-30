@@ -10,13 +10,14 @@ uses
 
 type
   TFormPricelist = class(TForm)
-    Database: TStringGrid;
-    Name: TStringColumn;
     NameEdit: TEdit;
     PriceEdit: TEdit;
     AddBtn: TButton;
     RmvBtn: TButton;
     Current: TLabel;
+    Database: TStringGrid;
+    Name: TStringColumn;
+    Price: TStringColumn;
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);
@@ -54,24 +55,26 @@ var i, j: Integer;
 begin
 with Database do
   begin
-    for i:=ARow+1 to RowCount-1 do
+    for i:=ARow+2 to RowCount-1 do
     for j:=0 to Database.ColumnCount-1 do
       Cells[j, i-1]:=Cells[j, i];
     for i:=0 to Database.ColumnCount-1 do
       Cells[i, RowCount-1]:='';
     RowCount:=RowCount-1;
   end;
-end;
+  end;
 
 procedure TFormPriceList.AddBtnClick(Sender: TObject);
 begin
   if NameEdit.Text='' then ShowMessage('Заполните поле услуги') else
   if PriceEdit.Text='' then ShowMessage('Заполните поле цены') else
-  begin
+    begin
+    Inc(i);
     NameA[i]:=NameEdit.Text;
     PriceA[i]:=PriceEdit.Text;
     Database.Cells[0,i]:=NameA[i];
     Database.Cells[1,i]:=PriceA[i];
+
     SetCurrentDir('data');
     SetCurrentDir(Current.Text + 'Data');
     AssignFile(f, 'Price.txt');
@@ -80,8 +83,7 @@ begin
     Writeln(f, PriceA[i]);
     CloseFile(f);
     SetCurrentDir('../');
-    Inc(i);
-  end;
+    end;
 end;
 
 procedure TFormPriceList.RmvBtnClick(Sender: TObject);
@@ -102,6 +104,8 @@ end;
 procedure TFormPriceList.FormShow(Sender: TObject);
 begin
   i:=0;
+  Database.Cells[0,0]:='Услуга';
+  Database.Cells[1,0]:='Стоимость';
   SetCurrentDir('data');
   SetCurrentDir(Current.Text + 'Data');
   if not FileExists('Price.txt') then

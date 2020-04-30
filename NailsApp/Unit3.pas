@@ -10,11 +10,6 @@ uses
 
 type
   TFormClient = class(TForm)
-    Database: TStringGrid;
-    Name: TStringColumn;
-    Address: TStringColumn;
-    Date: TDateColumn;
-    Number: TStringColumn;
     NameEdit: TEdit;
     AddressEdit: TEdit;
     DateEdit: TDateEdit;
@@ -22,6 +17,11 @@ type
     RmvBtn: TButton;
     Current: TLabel;
     NumEdit: TEdit;
+    Database: TStringGrid;
+    Name: TStringColumn;
+    Address: TStringColumn;
+    Date: TDateColumn;
+    Number: TStringColumn;
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);
