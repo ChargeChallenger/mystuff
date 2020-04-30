@@ -46,6 +46,7 @@ implementation
 
 {$R *.fmx}
 
+
 procedure TFormClient.DeleteRow(ARow: Integer);
 var i, j: Integer;
 begin
@@ -95,17 +96,14 @@ begin
   SetCurrentDir(Current.Text + 'Data');
   Clients:=TStringList.Create;
   Clients.LoadFromFile('Clients.txt');
-  if Clients.Text='' then ShowMessage('Список пуст!') else
-  begin
   Clients.Delete(Row4Del);
   Clients.Delete(Row4Del);
   Clients.Delete(Row4Del);
   Clients.Delete(Row4Del);
   Clients.SaveToFile('Clients.txt');
+  Clients.Free;
   FormClient.DeleteRow(Row4Del);
   i:=i-1;
-  end;
-  Clients.Free;
 end;
 
 procedure TFormClient.FormShow(Sender: TObject);
