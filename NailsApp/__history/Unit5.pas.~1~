@@ -25,9 +25,6 @@ type
     TimeColumn1: TTimeColumn;
     StringColumn1: TStringColumn;
     StringColumn2: TStringColumn;
-    Button2: TButton;
-    Label1: TLabel;
-    procedure Calendar1DayClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,16 +33,9 @@ type
 
 var
   Form5: TForm5;
-  SelectedDate: TDate;
 
 implementation
 
 {$R *.fmx}
-
-procedure TForm5.Calendar1DayClick(Sender: TObject);
-begin
-  SelectedDate:=Calendar1.Date;
-  Label1.Text:=' на '+DateTimeToStr(SelectedDate);
-end;
 
 end.

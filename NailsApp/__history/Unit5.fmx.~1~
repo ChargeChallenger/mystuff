@@ -16,7 +16,6 @@
     Size.Height = 160.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    OnDayClick = Calendar1DayClick
   end
   object StringGrid1: TStringGrid
     CanFocus = True
@@ -122,19 +121,5 @@
     Size.PlatformDefault = False
     TabOrder = 10
     Text = #1044#1086#1073#1072#1074#1080#1090#1100
-  end
-  object Button2: TButton
-    Position.X = 32.000000000000000000
-    Position.Y = 312.000000000000000000
-    Size.Width = 561.000000000000000000
-    Size.Height = 22.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 12
-    Text = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1074#1099#1073#1088#1072#1085#1085#1099#1081' '#1076#1077#1085#1100
-  end
-  object Label1: TLabel
-    Position.X = 288.000000000000000000
-    Position.Y = 32.000000000000000000
-    TabOrder = 13
   end
 end

@@ -83,7 +83,19 @@ FormPricelist.ShowModal;
 end;
 
 procedure TFormEntering.Button5Click(Sender: TObject);
+var Clients, Price: TStringList; i: integer;
 begin
+  Clients:=TStringList.Create;
+  Price:=TStringList.Create;
+  Form5.ComboEdit1.Items.Clear;
+  Form5.ComboEdit2.Items.Clear;
+  Clients.LoadFromFile('data/'+Edit1.Text+'Data/Clients.txt');
+  i:=0;
+  while i<Clients.Count do
+  begin
+    Form5.ComboEdit1.Items.Add(Clients.Strings[i]+' '+Clients.Strings[i+1]);
+    i:=i+4;
+  end;
   Form5.Show;
 end;
 
