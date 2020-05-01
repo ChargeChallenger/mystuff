@@ -31,7 +31,7 @@ implementation
 {$R *.fmx}
 
 procedure TFormRegistration.Button1Click(Sender: TObject);
-var Users: TStringList; i: integer; f: TextFile;
+var Users: TStringList; i: integer;
 begin
   Users:=TStringList.Create;
   Users.LoadFromFile('data/users.txt');
@@ -54,14 +54,6 @@ begin
       Users.SaveToFile('data/users.txt');
       SetCurrentDir('data');
       CreateDir(Edit1.Text + 'Data');
-      SetCurrentDir(Edit1.Text + 'Data');
-      AssignFile(f, 'Clients.txt');
-      Rewrite(f);
-      CloseFile(f);
-      AssignFile(f, 'Price.txt');
-      Rewrite(f);
-      CloseFile(f);
-      SetCurrentDir('../');
       SetCurrentDir('../');
       ShowMessage('Аккаунт успешно создан!');
     end

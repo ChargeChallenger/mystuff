@@ -1,2 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject/>
+<BorlandProject>
+  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Unit1.pas"/>
+    <File Path="Unit1.fmx"/>
+    <File Path="Unit2.pas"/>
+    <File Path="Unit2.fmx"/>
+    <File Path="Unit3.pas"/>
+    <File Path="Unit3.fmx"/>
+    <File Path="Unit4.pas"/>
+    <File Path="Unit4.fmx"/>
+    <File Path="Unit5.pas"/>
+    <File Path="Unit5.fmx"/>
+  </ProjectSortOrder>
+</BorlandProject>
