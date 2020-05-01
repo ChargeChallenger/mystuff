@@ -46,10 +46,12 @@ uses Unit5;
 procedure TFormEntering.Button1Click(Sender: TObject);
 var Users: TStringList; i: integer; CurrentUser: string;
 begin
-  Users:=TStringList.Create;
-  Users.LoadFromFile('data/users.txt');
-  i:=0;
-  while i<Users.Count do
+  if EnterBool=False then
+  begin
+    Users:=TStringList.Create;
+    Users.LoadFromFile('data/users.txt');
+    i:=0;
+    while i<Users.Count do
       begin
         if Edit1.Text=Users.Strings[i] then
         begin
@@ -60,12 +62,28 @@ begin
               CurrentUser:=Edit1.Text;
               FormClient.Caption:='NailsApp - Клиенты - ' + CurrentUser;
               FormClient.Current.Text:=CurrentUser;
+              Form5.Label2.Text:=CurrentUser;
+              EnterBool:=True;
+              Button1.Text:='Выход';
+              Edit1.Enabled:=false;
+              Edit2.Enabled:=false;
               exit;
            end;
         end;
         i:=i+2;
       end;
-  ShowMessage('Такого пользователя нет!');
+    ShowMessage('Такого пользователя нет!');
+  end else
+  begin
+    Panel2.Enabled:=false;
+    Edit1.Text:='';
+    Edit2.Text:='';
+    Edit1.Enabled:=True;
+    Edit2.Enabled:=True;
+    Button1.Text:='Вход';
+    EnterBool:=False;
+    ShowMessage('Вы вышли из профиля');
+  end;
 end;
 
 procedure TFormEntering.Button2Click(Sender: TObject);
@@ -97,12 +115,13 @@ begin
     Form5.ComboEdit1.Items.Add(Clients.Strings[i]+' '+Clients.Strings[i+1]);
     i:=i+4;
   end;
-  Form5.Show;
+  Form5.ShowModal;
 end;
 
 procedure TFormEntering.FormCreate(Sender: TObject);
 var f: textfile;
 begin
+  EnterBool:=false;
   if not(DirectoryExists('data')) then
   begin
     ShowMessage('Нет нужных файлов для работы! Программа их сейчас создаст.');
