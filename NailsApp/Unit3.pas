@@ -139,6 +139,7 @@ begin
   end;
   CloseFile(f);
   SetCurrentDir('../');
+  SetCurrentDir('../');
 end;
 
 end.
