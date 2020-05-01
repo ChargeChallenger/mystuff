@@ -35,6 +35,7 @@ type
 
 var
   FormEntering: TFormEntering;
+  EnterBool: boolean;
 
 implementation
 
