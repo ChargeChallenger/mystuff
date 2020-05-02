@@ -57,12 +57,12 @@ end;
 procedure TFormClient.DeleteRow(ARow: Integer);
 var i, j: Integer;
 begin
-with Database do
-  begin
-    for i:=ARow+1 to RowCount-1 do
-    for j:=0 to Database.ColumnCount-1 do Cells[j, i-1]:=Cells[j, i];
-    for i:=0 to Database.ColumnCount-1 do Cells[i, RowCount-1]:='';
-    RowCount:=RowCount-1;
+  with Database do
+    begin
+      for i:=ARow+1 to RowCount-1 do
+      for j:=0 to Database.ColumnCount-1 do Cells[j, i-1]:=Cells[j, i];
+      for i:=0 to Database.ColumnCount-1 do Cells[i, RowCount-1]:='';
+      RowCount:=RowCount-1;
   end;
 end;
 
@@ -98,6 +98,7 @@ end;
 procedure TFormClient.RmvBtnClick(Sender: TObject);
 var Clients: TStringList;
 begin
+  if (Database.Cells[0,Row4Del]='') and (Database.Cells[1,Row4Del]='') and (Database.Cells[2,Row4Del]='') and (Database.Cells[3,Row4Del]='') then Row4Del:=-1;
   if Row4Del=-1 then ShowMessage('Выберите строку для удаления!') else
     begin
     SetCurrentDir('data');
