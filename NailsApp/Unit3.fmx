@@ -87,9 +87,10 @@ object FormClient: TFormClient
     Size.PlatformDefault = False
     TabOrder = 0
     TabStop = False
-    Options = [ColLines, RowLines, Tabs, AutoDisplacement]
+    Options = [ColLines, RowLines, Tabs, Header, AutoDisplacement]
+    OnCellClick = DatabaseCellClick
     Viewport.Width = 813.000000000000000000
-    Viewport.Height = 493.000000000000000000
+    Viewport.Height = 472.000000000000000000
     object Name: TStringColumn
       Locked = True
       Header = #1060#1048#1054
@@ -97,7 +98,7 @@ object FormClient: TFormClient
     end
     object Address: TStringColumn
       Locked = True
-      Header = #1072#1076#1088#1077#1089
+      Header = #1040#1076#1088#1077#1089
       Size.Width = 205.000000000000000000
     end
     object Date: TDateColumn
@@ -106,7 +107,7 @@ object FormClient: TFormClient
       Size.Width = 121.000000000000000000
     end
     object Number: TStringColumn
-      Header = #1090#1077#1083#1077#1092#1086#1085
+      Header = #1053#1086#1084#1077#1088' '#1090#1077#1083#1077#1092#1086#1085#1072
       Size.Width = 215.000000000000000000
     end
   end

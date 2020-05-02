@@ -26,6 +26,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);
     procedure RmvBtnClick(Sender: TObject);
+    procedure DatabaseCellClick(const Column: TColumn; const Row: Integer);
 
   private
     { Private declarations }
@@ -47,16 +48,20 @@ implementation
 {$R *.fmx}
 
 
+procedure TFormClient.DatabaseCellClick(const Column: TColumn;
+  const Row: Integer);
+begin
+  Row4Del:=Row;
+end;
+
 procedure TFormClient.DeleteRow(ARow: Integer);
 var i, j: Integer;
 begin
 with Database do
   begin
-    for i:=ARow+2 to RowCount-1 do
-    for j:=0 to Database.ColumnCount-1 do
-      Cells[j, i-1]:=Cells[j, i];
-    for i:=0 to Database.ColumnCount-1 do
-      Cells[i, RowCount-1]:='';
+    for i:=ARow+1 to RowCount-1 do
+    for j:=0 to Database.ColumnCount-1 do Cells[j, i-1]:=Cells[j, i];
+    for i:=0 to Database.ColumnCount-1 do Cells[i, RowCount-1]:='';
     RowCount:=RowCount-1;
   end;
 end;
@@ -67,7 +72,6 @@ begin
   if AddressEdit.Text='' then ShowMessage('Заполните поле адреса') else
   if NumEdit.Text='' then ShowMessage('Заполните поле номера телефона') else
   begin
-    Inc(i);
     NameA[i]:=NameEdit.Text;
     AddressA[i]:=AddressEdit.Text;
     DateA[i]:=DateToStr(DateEdit.Date);
@@ -87,35 +91,35 @@ begin
     CloseFile(f);
     SetCurrentDir('../');
     SetCurrentDir('../');
+    Inc(i);
   end;
 end;
 
 procedure TFormClient.RmvBtnClick(Sender: TObject);
 var Clients: TStringList;
 begin
-  SetCurrentDir('data');
-  SetCurrentDir(Current.Text + 'Data');
-  Clients:=TStringList.Create;
-  Clients.LoadFromFile('Clients.txt');
-  Clients.Delete(Row4Del);
-  Clients.Delete(Row4Del);
-  Clients.Delete(Row4Del);
-  Clients.Delete(Row4Del);
-  Clients.SaveToFile('Clients.txt');
-  Clients.Free;
-  FormClient.DeleteRow(Row4Del);
-  i:=i-1;
+  if Row4Del=-1 then ShowMessage('Выберите строку для удаления!') else
+    begin
+    SetCurrentDir('data');
+    SetCurrentDir(Current.Text + 'Data');
+    Clients:=TStringList.Create;
+    Clients.LoadFromFile('Clients.txt');
+    Clients.Delete(Row4Del);
+    Clients.Delete(Row4Del);
+    Clients.Delete(Row4Del);
+    Clients.Delete(Row4Del);
+    Clients.SaveToFile('Clients.txt');
+    Clients.Free;
+    FormClient.DeleteRow(Row4Del);
+    i:=i-1;
+    Row4Del:=-1;
+    end;
 end;
 
 procedure TFormClient.FormShow(Sender: TObject);
 begin
   i:=0;
-  Database.Cells[0,0]:='ФИО';
-  Database.Cells[1,0]:='Адрес';
-  Database.Cells[2,0]:='Дата';
-  Database.Cells[3,0]:='Номер';
-  SetCurrentDir('data');
-  SetCurrentDir(Current.Text + 'Data');
+  SetCurrentDir('data/' + Current.Text + 'Data');
   if not FileExists('Clients.txt') then
   begin
   ShowMessage('Нет файла базы данных. Создаем...');
@@ -131,10 +135,10 @@ begin
     Readln(f, AddressA[i]);
     Readln(f, DateA[i]);
     Readln(f, NumEditA[i]);
-    Database.Cells[0,i+1]:=NameA[i];
-    Database.Cells[1,i+1]:=AddressA[i];
-    Database.Cells[2,i+1]:=DateA[i];
-    Database.Cells[3,i+1]:=NumEditA[i];
+    Database.Cells[0,i]:=NameA[i];
+    Database.Cells[1,i]:=AddressA[i];
+    Database.Cells[2,i]:=DateA[i];
+    Database.Cells[3,i]:=NumEditA[i];
     Inc(i);
   end;
   CloseFile(f);
