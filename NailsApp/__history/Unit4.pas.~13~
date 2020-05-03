@@ -10,20 +10,17 @@ uses
 
 type
   TFormPricelist = class(TForm)
+    NameEdit: TEdit;
+    PriceEdit: TEdit;
+    AddBtn: TButton;
+    RmvBtn: TButton;
+    Current: TLabel;
     Database: TStringGrid;
     Name: TStringColumn;
     Price: TStringColumn;
     StyleBook1: TStyleBook;
-    Panel1: TPanel;
     Label1: TLabel;
-    NameEdit: TEdit;
     Label2: TLabel;
-    PriceEdit: TEdit;
-    AddBtn: TButton;
-    RmvBtn: TButton;
-    Panel2: TPanel;
-    Current: TLabel;
-    Label3: TLabel;
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);

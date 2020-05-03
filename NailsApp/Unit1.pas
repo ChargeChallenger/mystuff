@@ -64,6 +64,7 @@ begin
               CurrentUser:=Edit1.Text;
               FormClient.Caption:='NailsApp - Клиенты - ' + CurrentUser;
               FormClient.Current.Text:=CurrentUser;
+              FormPricelist.Current.Text:=CurrentUser;
               Form5.Label2.Text:=CurrentUser;
               EnterBool:=True;
               Button1.Text:='Выход';

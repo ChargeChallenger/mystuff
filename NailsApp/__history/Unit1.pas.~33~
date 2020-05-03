@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Edit, FMX.Controls.Presentation, Unit2, Unit3, System.hash;
+  FMX.Edit, FMX.Controls.Presentation, Unit2, Unit3, Unit4, System.hash;
 
 type
   TFormEntering = class(TForm)
@@ -21,10 +21,14 @@ type
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
+    StyleBook1: TStyleBook;
+    ImageControl1: TImageControl;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,18 +37,23 @@ type
 
 var
   FormEntering: TFormEntering;
+  EnterBool: boolean;
 
 implementation
 
 {$R *.fmx}
 
+uses Unit5;
+
 procedure TFormEntering.Button1Click(Sender: TObject);
 var Users: TStringList; i: integer; CurrentUser: string;
 begin
-  Users:=TStringList.Create;
-  Users.LoadFromFile('data/users.txt');
-  i:=0;
-  while i<Users.Count do
+  if EnterBool=False then
+  begin
+    Users:=TStringList.Create;
+    Users.LoadFromFile('data/users.txt');
+    i:=0;
+    while i<Users.Count do
       begin
         if Edit1.Text=Users.Strings[i] then
         begin
@@ -53,13 +62,30 @@ begin
               Panel2.Enabled:=true;
               ShowMessage('Вы вошли как '+Edit1.Text);
               CurrentUser:=Edit1.Text;
-              FormClient.CurrentUser.Text:='Вы вошли как: ' + CurrentUser;
+              FormClient.Caption:='NailsApp - Клиенты - ' + CurrentUser;
+              FormClient.Current.Text:=CurrentUser;
+              Form5.Label2.Text:=CurrentUser;
+              EnterBool:=True;
+              Button1.Text:='Выход';
+              Edit1.Enabled:=false;
+              Edit2.Enabled:=false;
               exit;
            end;
         end;
         i:=i+2;
       end;
-  ShowMessage('Такого пользователя нет!');
+    ShowMessage('Такого пользователя нет!');
+  end else
+  begin
+    Panel2.Enabled:=false;
+    Edit1.Text:='';
+    Edit2.Text:='';
+    Edit1.Enabled:=True;
+    Edit2.Enabled:=True;
+    Button1.Text:='Вход';
+    EnterBool:=False;
+    ShowMessage('Вы вышли из профиля');
+  end;
 end;
 
 procedure TFormEntering.Button2Click(Sender: TObject);
@@ -72,9 +98,32 @@ begin
   FormClient.ShowModal;
 end;
 
+procedure TFormEntering.Button4Click(Sender: TObject);
+begin
+FormPricelist.ShowModal;
+end;
+
+procedure TFormEntering.Button5Click(Sender: TObject);
+var Clients, Price: TStringList; i: integer;
+begin
+  Clients:=TStringList.Create;
+  Price:=TStringList.Create;
+  Form5.ComboEdit1.Items.Clear;
+  Form5.ComboEdit2.Items.Clear;
+  Clients.LoadFromFile('data/'+Edit1.Text+'Data/Clients.txt');
+  i:=0;
+  while i<Clients.Count do
+  begin
+    Form5.ComboEdit1.Items.Add(Clients.Strings[i]);
+    i:=i+4;
+  end;
+  Form5.ShowModal;
+end;
+
 procedure TFormEntering.FormCreate(Sender: TObject);
 var f: textfile;
 begin
+  EnterBool:=false;
   if not(DirectoryExists('data')) then
   begin
     ShowMessage('Нет нужных файлов для работы! Программа их сейчас создаст.');

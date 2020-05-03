@@ -11,13 +11,14 @@
     <File Path="Unit4.fmx"/>
     <File Path="Unit5.pas"/>
     <File Path="Unit5.fmx"/>
-  </ProjectSortOrder>  <Transactions>
-    <Transaction>2020.05.03 16:21:34.795,=D:\Documents\Git\mystuff\NailsApp\Style.vsf</Transaction>
-    <Transaction>2020.05.03 16:22:06.214,=D:\Documents\Git\mystuff\NailsApp\Style.style</Transaction>
-    <Transaction>2020.05.03 16:22:46.077,D:\Documents\Git\mystuff\NailsApp\Style.vsf=</Transaction>
-    <Transaction>2020.05.03 16:22:46.110,D:\Documents\Git\mystuff\NailsApp\Style.style=</Transaction>
-    <Transaction>2020.05.03 16:53:54.436,=D:\Documents\Git\mystuff\NailsApp\Style.style</Transaction>
-    <Transaction>2020.05.03 16:53:54.445,=D:\Documents\Git\mystuff\NailsApp\Style.vsf</Transaction>
-    <Transaction>2020.05.03 17:10:33.400,D:\Documents\Git\mystuff\NailsApp\Style.style=</Transaction>
+  </ProjectSortOrder>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.795,=D:\Documents\Git\mystuff\NailsApp\Style.vsf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.077,D:\Documents\Git\mystuff\NailsApp\Style.vsf=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.445,=D:\Documents\Git\mystuff\NailsApp\Style.vsf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.400,D:\Documents\Git\mystuff\NailsApp\Style.style=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.214,=D:\Documents\Git\mystuff\NailsApp\Style.style</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.110,D:\Documents\Git\mystuff\NailsApp\Style.style=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.436,=D:\Documents\Git\mystuff\NailsApp\Style.style</Transaction>
   </Transactions>
 </BorlandProject>
