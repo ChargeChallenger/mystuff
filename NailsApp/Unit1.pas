@@ -21,6 +21,8 @@ type
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
+    StyleBook1: TStyleBook;
+    ImageControl1: TImageControl;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -112,7 +114,7 @@ begin
   i:=0;
   while i<Clients.Count do
   begin
-    Form5.ComboEdit1.Items.Add(Clients.Strings[i]+' '+Clients.Strings[i+1]);
+    Form5.ComboEdit1.Items.Add(Clients.Strings[i]);
     i:=i+4;
   end;
   Form5.ShowModal;

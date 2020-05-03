@@ -16,6 +16,7 @@ type
     Label3: TLabel;
     Edit3: TEdit;
     Button1: TButton;
+    StyleBook1: TStyleBook;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }

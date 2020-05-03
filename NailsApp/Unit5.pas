@@ -12,14 +12,8 @@ type
   TForm5 = class(TForm)
     Calendar1: TCalendar;
     StringGrid1: TStringGrid;
-    ComboEdit1: TComboEdit;
-    ComboEdit2: TComboEdit;
-    TimeEdit1: TTimeEdit;
     Календарь: TLabel;
     График: TLabel;
-    Время: TLabel;
-    Клиент: TLabel;
-    Услуга: TLabel;
     Button1: TButton;
     DateColumn1: TDateColumn;
     TimeColumn1: TTimeColumn;
@@ -27,8 +21,18 @@ type
     StringColumn2: TStringColumn;
     Button2: TButton;
     Label1: TLabel;
-    AddButton: TButton;
+    Panel1: TPanel;
     Label2: TLabel;
+    Label3: TLabel;
+    Panel2: TPanel;
+    Время: TLabel;
+    TimeEdit1: TTimeEdit;
+    Label4: TLabel;
+    ComboEdit1: TComboEdit;
+    Услуга: TLabel;
+    ComboEdit2: TComboEdit;
+    AddButton: TButton;
+    StyleBook1: TStyleBook;
     procedure Calendar1DayClick(Sender: TObject);
     procedure AddButtonClick(Sender: TObject);
     procedure StringGrid1CellClick(const Column: TColumn; const Row: Integer);
@@ -97,19 +101,17 @@ begin
   if FileExists('data/'+Label2.Text+'Data/Day_'+DateTimeToStr(SelectedDate)+'.txt') then
   begin
     list.LoadFromFile('data/'+Label2.Text+'Data/Day_'+DateTimeToStr(SelectedDate)+'.txt');
-    for i := 0 to StringGrid1.RowCount do
+    i:=0;
+    while i < list.Count do
     begin
-    switch:=True;
-      for j := 0 to 3 do
-      begin
-        if switch=True then
-        begin
-          StringGrid1.RowCount:=StringGrid1.RowCount+1;
-          switch:=False;
-        end;
-        StringGrid1.Cells[j,i]:=list.Strings[StringGrid1.RowCount-1];
-      end;
+      StringGrid1.RowCount:=StringGrid1.RowCount+1;
+      StringGrid1.Cells[0,StringGrid1.RowCount-1]:=list.Strings[i];
+      StringGrid1.Cells[1,StringGrid1.RowCount-1]:=list.Strings[i+1];
+      StringGrid1.Cells[2,StringGrid1.RowCount-1]:=list.Strings[i+2];
+      StringGrid1.Cells[3,StringGrid1.RowCount-1]:=list.Strings[i+3];
+      i:=i+4;
     end;
+    StringGrid1.RowCount:=StringGrid1.RowCount-1;
   end;
   Label1.Text:=' на '+DateTimeToStr(SelectedDate);
 end;

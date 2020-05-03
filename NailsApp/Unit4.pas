@@ -18,6 +18,9 @@ type
     Database: TStringGrid;
     Name: TStringColumn;
     Price: TStringColumn;
+    StyleBook1: TStyleBook;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);

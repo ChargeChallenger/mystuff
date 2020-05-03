@@ -22,6 +22,7 @@ type
     Address: TStringColumn;
     Date: TDateColumn;
     Number: TStringColumn;
+    StyleBook1: TStyleBook;
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);
