@@ -6,23 +6,32 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, System.Rtti,
   FMX.Grid.Style, FMX.Controls.Presentation, FMX.ScrollBox, FMX.Grid, FMX.Edit,
-  FMX.StdCtrls, FMX.DateTimeCtrls, FMX.Menus, FMX.EditBox, FMX.NumberBox;
+  FMX.StdCtrls, FMX.DateTimeCtrls, FMX.Menus, FMX.EditBox, FMX.NumberBox,
+  FMX.Memo;
 
 type
   TFormClient = class(TForm)
-    NameEdit: TEdit;
-    AddressEdit: TEdit;
-    DateEdit: TDateEdit;
-    AddBtn: TButton;
-    RmvBtn: TButton;
-    Current: TLabel;
-    NumEdit: TEdit;
     Database: TStringGrid;
     Name: TStringColumn;
     Address: TStringColumn;
     Date: TDateColumn;
     Number: TStringColumn;
     StyleBook1: TStyleBook;
+    Panel1: TPanel;
+    Label1: TLabel;
+    NameEdit: TEdit;
+    Label2: TLabel;
+    AddressEdit: TEdit;
+    Label3: TLabel;
+    DateEdit: TDateEdit;
+    Label4: TLabel;
+    NumEdit: TEdit;
+    AddBtn: TButton;
+    RmvBtn: TButton;
+    Panel2: TPanel;
+    Current: TLabel;
+    Label5: TLabel;
+    Memo1: TMemo;
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);

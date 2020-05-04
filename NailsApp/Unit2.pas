@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Edit, FMX.Controls.Presentation, System.hash;
+  FMX.Edit, FMX.Controls.Presentation, System.hash, FMX.ScrollBox, FMX.Memo;
 
 type
   TFormRegistration = class(TForm)
@@ -17,6 +17,7 @@ type
     Edit3: TEdit;
     Button1: TButton;
     StyleBook1: TStyleBook;
+    Memo1: TMemo;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }

@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, System.Rtti,
   FMX.Grid.Style, FMX.Controls.Presentation, FMX.ScrollBox, FMX.Grid, FMX.Edit,
-  FMX.StdCtrls, FMX.DateTimeCtrls, FMX.Menus, FMX.EditBox, FMX.NumberBox;
+  FMX.StdCtrls, FMX.DateTimeCtrls, FMX.Menus, FMX.EditBox, FMX.NumberBox,
+  FMX.Memo;
 
 type
   TFormPricelist = class(TForm)
@@ -24,6 +25,7 @@ type
     Panel2: TPanel;
     Current: TLabel;
     Label3: TLabel;
+    Memo1: TMemo;
     procedure AddBtnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure DeleteRow(ARow: Integer);
@@ -89,6 +91,7 @@ begin
     Writeln(f, PriceA[i]);
     CloseFile(f);
     SetCurrentDir('../');
+    SetCurrentDir('../');
     end;
 end;
 
@@ -105,6 +108,8 @@ begin
   Clients.Free;
   FormPriceList.DeleteRow(Row4Del);
  i:=i-1;
+ SetCurrentDir('../');
+ SetCurrentDir('../');
 end;
 
 procedure TFormPriceList.FormShow(Sender: TObject);
@@ -132,6 +137,7 @@ begin
     Inc(i);
   end;
   CloseFile(f);
+  SetCurrentDir('../');
   SetCurrentDir('../');
 end;
 
