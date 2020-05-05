@@ -126,7 +126,7 @@
       TabOrder = 7
     end
     object TimeEdit1: TTimeEdit
-      Time = 0.737057870370370400
+      Time = 0.708333333333333400
       Position.X = 8.000000000000000000
       Position.Y = 27.000000000000000000
       Size.Width = 193.000000000000000000

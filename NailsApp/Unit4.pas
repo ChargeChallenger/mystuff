@@ -31,6 +31,7 @@ type
     procedure DeleteRow(ARow: Integer);
     procedure DatabaseCellClick(const Column: TColumn; const Row: Integer);
     procedure RmvBtnClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
 
   private
     { Private declarations }
@@ -107,6 +108,12 @@ begin
     i:=i-1;
     Row4Del:=-1;
     end;
+end;
+
+procedure TFormPricelist.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  NameEdit.Text:=EmptyStr;
+  PriceEdit.Text:=EmptyStr;
 end;
 
 procedure TFormPriceList.FormShow(Sender: TObject);

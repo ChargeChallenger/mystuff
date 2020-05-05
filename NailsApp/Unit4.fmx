@@ -5,12 +5,13 @@ object FormPricelist: TFormPricelist
   BorderStyle = Single
   Caption = 'NailsApp - '#1055#1088#1072#1081#1089#1083#1080#1089#1090
   ClientHeight = 489
-  ClientWidth = 843
+  ClientWidth = 841
   Position = Designed
   StyleBook = StyleBook1
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnClose = FormClose
   OnShow = FormShow
   Left = 100
   Top = 100
@@ -11151,35 +11152,35 @@ object FormPricelist: TFormPricelist
     Position.X = 8.000000000000000000
     Position.Y = 200.000000000000000000
     Size.Width = 225.000000000000000000
-    Size.Height = 273.000000000000000000
+    Size.Height = 281.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 5
-    Viewport.Width = 225.000000000000000000
-    Viewport.Height = 273.000000000000000000
+    Viewport.Width = 221.000000000000000000
+    Viewport.Height = 277.000000000000000000
   end
   object Database: TStringGrid
     CanFocus = True
     ClipChildren = True
-    Position.X = 256.000000000000000000
+    Position.X = 240.000000000000000000
     Position.Y = 9.000000000000000000
-    Size.Width = 561.000000000000000000
+    Size.Width = 593.000000000000000000
     Size.Height = 472.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     TabStop = False
     Options = [ColLines, RowLines, Tabs, Header, AutoDisplacement]
     OnCellClick = DatabaseCellClick
-    Viewport.Width = 561.000000000000000000
-    Viewport.Height = 472.000000000000000000
+    Viewport.Width = 573.000000000000000000
+    Viewport.Height = 447.000000000000000000
     object Name: TStringColumn
       Locked = True
       Header = #1059#1089#1083#1091#1075#1072
-      Size.Width = 281.000000000000000000
+      Size.Width = 305.000000000000000000
     end
     object Price: TStringColumn
       Locked = True
       Header = #1062#1077#1085#1072
-      Size.Width = 255.000000000000000000
+      Size.Width = 263.000000000000000000
     end
   end
 end

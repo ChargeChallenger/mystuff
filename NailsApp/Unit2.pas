@@ -19,6 +19,7 @@ type
     StyleBook1: TStyleBook;
     Memo1: TMemo;
     procedure Button1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -72,6 +73,14 @@ begin
   end
   else
     ShowMessage('Пустые поля!');
+end;
+
+procedure TFormRegistration.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Edit1.Text:=EmptyStr;
+  Edit2.Text:=EmptyStr;
+  Edit3.Text:=EmptyStr;
 end;
 
 end.

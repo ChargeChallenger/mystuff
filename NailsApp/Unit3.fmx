@@ -4,13 +4,14 @@ object FormClient: TFormClient
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = Single
   Caption = 'S'
-  ClientHeight = 556
-  ClientWidth = 906
+  ClientHeight = 553
+  ClientWidth = 905
   Position = Designed
   StyleBook = StyleBook1
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnClose = FormClose
   OnShow = FormShow
   Left = 100
   Top = 100
@@ -11125,7 +11126,7 @@ object FormClient: TFormClient
       TabOrder = 7
     end
     object DateEdit: TDateEdit
-      Date = 43938.000000000000000000
+      Date = 36526.000000000000000000
       Position.X = 8.000000000000000000
       Position.Y = 120.000000000000000000
       Size.Width = 225.000000000000000000
@@ -11177,7 +11178,7 @@ object FormClient: TFormClient
     Size.PlatformDefault = False
     TabOrder = 3
     object Current: TLabel
-      Position.X = 88.000000000000000000
+      Position.X = 96.000000000000000000
       Size.Width = 153.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
@@ -11185,6 +11186,7 @@ object FormClient: TFormClient
       TabOrder = 0
     end
     object Label5: TLabel
+      Position.X = 8.000000000000000000
       Size.Width = 81.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False

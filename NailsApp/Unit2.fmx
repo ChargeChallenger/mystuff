@@ -9,11 +9,12 @@ object FormRegistration: TFormRegistration
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnClose = FormClose
   DesignerMasterStyle = 0
   object Label1: TLabel
     StyledSettings = [Family, Style, FontColor]
     Position.X = 8.000000000000000000
-    Position.Y = 16.000000000000000000
+    Position.Y = 8.000000000000000000
     Size.Width = 177.000000000000000000
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
@@ -25,7 +26,7 @@ object FormRegistration: TFormRegistration
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 5
     Position.X = 8.000000000000000000
-    Position.Y = 40.000000000000000000
+    Position.Y = 32.000000000000000000
     Size.Width = 233.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -33,7 +34,7 @@ object FormRegistration: TFormRegistration
   object Label2: TLabel
     StyledSettings = [Family, Style, FontColor]
     Position.X = 8.000000000000000000
-    Position.Y = 64.000000000000000000
+    Position.Y = 56.000000000000000000
     Size.Width = 177.000000000000000000
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
@@ -46,7 +47,7 @@ object FormRegistration: TFormRegistration
     TabOrder = 4
     Password = True
     Position.X = 8.000000000000000000
-    Position.Y = 88.000000000000000000
+    Position.Y = 80.000000000000000000
     Size.Width = 233.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -54,7 +55,7 @@ object FormRegistration: TFormRegistration
   object Label3: TLabel
     StyledSettings = [Family, Style, FontColor]
     Position.X = 8.000000000000000000
-    Position.Y = 112.000000000000000000
+    Position.Y = 104.000000000000000000
     Size.Width = 241.000000000000000000
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
@@ -67,7 +68,7 @@ object FormRegistration: TFormRegistration
     TabOrder = 3
     Password = True
     Position.X = 8.000000000000000000
-    Position.Y = 136.000000000000000000
+    Position.Y = 128.000000000000000000
     Size.Width = 233.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
@@ -11138,7 +11139,7 @@ object FormRegistration: TFormRegistration
     Size.Height = 185.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 8
-    Viewport.Width = 233.000000000000000000
-    Viewport.Height = 185.000000000000000000
+    Viewport.Width = 213.000000000000000000
+    Viewport.Height = 181.000000000000000000
   end
 end
