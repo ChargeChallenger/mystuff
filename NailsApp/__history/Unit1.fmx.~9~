@@ -2,7 +2,6 @@ object FormEntering: TFormEntering
   StyleName = 'test'
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'NailsApp - '#1042#1093#1086#1076
   ClientHeight = 355
   ClientWidth = 479

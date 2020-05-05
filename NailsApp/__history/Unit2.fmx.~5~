@@ -1,53 +1,87 @@
-object FormClient: TFormClient
-  Left = 100
-  Top = 100
-  BorderIcons = [biSystemMenu, biMinimize]
-  BorderStyle = Single
-  Caption = 'S'
-  ClientHeight = 556
-  ClientWidth = 906
-  Position = Designed
+object FormRegistration: TFormRegistration
+  Left = 0
+  Top = 0
+  Caption = 'NailsApp - '#1056#1077#1075#1080#1089#1090#1088#1072#1094#1080#1103
+  ClientHeight = 205
+  ClientWidth = 487
   StyleBook = StyleBook1
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  OnShow = FormShow
-  Left = 100
-  Top = 100
   DesignerMasterStyle = 0
-  object Database: TStringGrid
-    CanFocus = True
-    ClipChildren = True
-    Position.X = 256.000000000000000000
-    Position.Y = 8.000000000000000000
-    Size.Width = 641.000000000000000000
-    Size.Height = 537.000000000000000000
+  object Label1: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.Font.Size = 20.000000000000000000
+    Text = #1048#1084#1103' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1103':'
+    TabOrder = 2
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    Position.X = 8.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label2: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 20.000000000000000000
+    Text = #1042#1074#1077#1076#1080#1090#1077' '#1087#1072#1088#1086#1083#1100':'
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Password = True
+    Position.X = 8.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label3: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 112.000000000000000000
+    Size.Width = 241.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 20.000000000000000000
+    Text = #1042#1074#1077#1076#1080#1090#1077' '#1087#1072#1088#1086#1083#1100' '#1077#1097#1105' '#1088#1072#1079':'
     TabOrder = 0
-    TabStop = False
-    Options = [ColLines, RowLines, Tabs, Header, AutoDisplacement]
-    OnCellClick = DatabaseCellClick
-    Viewport.Width = 621.000000000000000000
-    Viewport.Height = 512.000000000000000000
-    object Name: TStringColumn
-      Locked = True
-      Header = #1060#1048#1054
-      Size.Width = 217.000000000000000000
-    end
-    object Address: TStringColumn
-      Locked = True
-      Header = #1040#1076#1088#1077#1089
-      Size.Width = 159.000000000000000000
-    end
-    object Date: TDateColumn
-      Locked = True
-      Header = #1044#1072#1090#1072' '#1088#1086#1078#1076#1077#1085#1080#1103
-      Size.Width = 97.000000000000000000
-    end
-    object Number: TStringColumn
-      Header = #1053#1086#1084#1077#1088' '#1090#1077#1083#1077#1092#1086#1085#1072
-      Size.Width = 141.000000000000000000
-    end
+  end
+  object Edit3: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Password = True
+    Position.X = 8.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Button1: TButton
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 8.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = #1047#1072#1088#1077#1075#1080#1089#1090#1088#1080#1088#1086#1074#1072#1090#1100#1089#1103
+    TextSettings.Font.Size = 18.000000000000000000
+    OnClick = Button1Click
   end
   object StyleBook1: TStyleBook
     Styles = <
@@ -11076,146 +11110,34 @@ object FormClient: TFormClient
           6F720709784646464545334238105374726F6B652E546869636B6E6573730500
           000000000000800040000000}
       end>
-    Left = 219
-    Top = 512
-  end
-  object Panel1: TPanel
-    Position.X = 8.000000000000000000
-    Position.Y = 32.000000000000000000
-    Size.Width = 241.000000000000000000
-    Size.Height = 265.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 2
-    object Label1: TLabel
-      Position.X = 8.000000000000000000
-      Position.Y = 8.000000000000000000
-      Text = #1060#1048#1054':'
-      TabOrder = 9
-    end
-    object NameEdit: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      TabOrder = 4
-      MaxLength = 100
-      Position.X = 8.000000000000000000
-      Position.Y = 24.000000000000000000
-      Size.Width = 225.000000000000000000
-      Size.Height = 22.000000000000000000
-      Size.PlatformDefault = False
-    end
-    object Label2: TLabel
-      Position.X = 8.000000000000000000
-      Position.Y = 56.000000000000000000
-      Text = #1040#1076#1088#1077#1089':'
-      TabOrder = 8
-    end
-    object AddressEdit: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      TabOrder = 3
-      MaxLength = 100
-      Position.X = 8.000000000000000000
-      Position.Y = 72.000000000000000000
-      Size.Width = 225.000000000000000000
-      Size.Height = 22.000000000000000000
-      Size.PlatformDefault = False
-    end
-    object Label3: TLabel
-      Position.X = 8.000000000000000000
-      Position.Y = 104.000000000000000000
-      Text = #1044#1072#1090#1072' '#1088#1086#1078#1076#1077#1085#1080#1103':'
-      TabOrder = 7
-    end
-    object DateEdit: TDateEdit
-      Date = 43938.000000000000000000
-      Position.X = 8.000000000000000000
-      Position.Y = 120.000000000000000000
-      Size.Width = 225.000000000000000000
-      Size.Height = 22.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 2
-    end
-    object Label4: TLabel
-      Position.X = 8.000000000000000000
-      Position.Y = 152.000000000000000000
-      Text = #1053#1086#1084#1077#1088' '#1090#1077#1083#1077#1092#1086#1085#1072':'
-      TabOrder = 6
-    end
-    object NumEdit: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      TabOrder = 5
-      Position.X = 8.000000000000000000
-      Position.Y = 171.000000000000000000
-      Size.Width = 225.000000000000000000
-      Size.Height = 22.000000000000000000
-      Size.PlatformDefault = False
-    end
-    object AddBtn: TButton
-      Position.X = 8.000000000000000000
-      Position.Y = 203.000000000000000000
-      Size.Width = 225.000000000000000000
-      Size.Height = 22.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      Text = #1044#1086#1073#1072#1074#1080#1090#1100
-      OnClick = AddBtnClick
-    end
-    object RmvBtn: TButton
-      Position.X = 8.000000000000000000
-      Position.Y = 235.000000000000000000
-      Size.Width = 225.000000000000000000
-      Size.Height = 22.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 1
-      Text = #1059#1076#1072#1083#1080#1090#1100
-      OnClick = RmvBtnClick
-    end
-  end
-  object Panel2: TPanel
-    Position.X = 8.000000000000000000
-    Position.Y = 8.000000000000000000
-    Size.Width = 241.000000000000000000
-    Size.Height = 17.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 3
-    object Current: TLabel
-      Position.X = 88.000000000000000000
-      Size.Width = 153.000000000000000000
-      Size.Height = 17.000000000000000000
-      Size.PlatformDefault = False
-      Text = 'Current'
-      TabOrder = 0
-    end
-    object Label5: TLabel
-      Size.Width = 81.000000000000000000
-      Size.Height = 17.000000000000000000
-      Size.PlatformDefault = False
-      Text = #1055#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1100':'
-      TabOrder = 1
-    end
+    Left = 207
+    Top = 8
   end
   object Memo1: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
     Lines.Strings = (
-      #1044#1083#1103' '#1076#1086#1073#1072#1074#1083#1077#1085#1080#1103' '#1079#1072#1087#1080#1089#1080' '#1074' '#1090#1072#1073#1083#1080#1094#1091':'
-      '1. '#1047#1072#1087#1086#1083#1085#1080#1090#1077' '#1087#1086#1083#1077' "'#1060#1048#1054'"'
-      '2. '#1047#1072#1087#1086#1083#1085#1080#1090#1077' '#1087#1086#1083#1077' "'#1040#1076#1088#1077#1089'"'
-      '3. '#1047#1072#1087#1086#1083#1085#1080#1090#1077' '#1087#1086#1083#1077' "'#1044#1072#1090#1072' '#1088#1086#1078#1076#1077#1085#1080#1103'"'
-      '4. '#1047#1072#1087#1086#1083#1085#1080#1090#1077' '#1087#1086#1083#1077' "'#1053#1086#1084#1077#1088' '#1090#1077#1083#1077#1092#1086#1085#1072'"'
-      '5. '#1053#1072#1078#1084#1080#1090#1077' "'#1044#1086#1073#1072#1074#1080#1090#1100'"'
+      #1056#1077#1075#1080#1089#1090#1088#1072#1094#1080#1103':'
+      '1. '#1042#1074#1077#1076#1080#1090#1077' '#1080#1084#1103' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1103','
+      '    '#1082#1086#1090#1086#1088#1086#1077' '#1042#1099' '#1073#1091#1076#1077#1090#1077' '#1080#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '
+      '    '#1087#1088#1080' '#1074#1093#1086#1076#1077'.'
+      '2. '#1042#1074#1077#1076#1080#1090#1077' '#1087#1072#1088#1086#1083#1100', '#1082#1086#1090#1086#1088#1099#1081' '#1042#1099' '
+      '    '#1073#1091#1076#1077#1090#1077' '#1080#1089#1087#1086#1083#1100#1079#1086#1074#1072#1090#1100' '#1087#1088#1080' '#1074#1093#1086#1076#1077'.'
+      '3. '#1042#1074#1077#1076#1080#1090#1077' '#1087#1072#1088#1086#1083#1100' '#1077#1097#1105' '#1088#1072#1079'.'
       ''
-      #1044#1083#1103' '#1091#1076#1072#1083#1077#1085#1080#1103' '#1079#1072#1087#1080#1089#1080':'
-      '1. '#1053#1072#1078#1084#1080#1090#1077' '#1085#1072' '#1085#1091#1078#1085#1091#1102' '#1079#1072#1087#1080#1089#1100
-      '2. '#1053#1072#1078#1084#1080#1090#1077' "'#1059#1076#1072#1083#1080#1090#1100'"'
-      ''
-      #1058#1072#1073#1083#1080#1094#1072' '#1072#1074#1090#1086#1084#1072#1090#1080#1095#1077#1089#1082#1080' '#1089#1086#1093#1088#1072#1085#1103#1077#1090#1089#1103)
+      #1056#1077#1075#1080#1089#1090#1088#1072#1094#1080#1103' '#1073#1091#1076#1077#1090' '#1091#1089#1087#1077#1096#1085#1072', '#1077#1089#1083#1080' '
+      #1086#1073#1072' '#1074#1074#1077#1076#1105#1085#1085#1099#1093' '#1087#1072#1088#1086#1083#1103' '#1089#1086#1074#1087#1072#1076#1072#1102#1090' '
+      #1080' '#1080#1084#1103' '#1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1103' '#1085#1077' '#1087#1086#1074#1090#1086#1088#1103#1077#1090' '
+      #1091#1078#1077' '#1079#1072#1088#1077#1075#1080#1089#1090#1088#1080#1088#1086#1074#1072#1085#1085#1099#1093' '
+      #1087#1086#1083#1100#1079#1086#1074#1072#1090#1077#1083#1077#1081'.')
     ReadOnly = True
-    Position.X = 8.000000000000000000
-    Position.Y = 304.000000000000000000
-    Size.Width = 241.000000000000000000
-    Size.Height = 241.000000000000000000
+    Position.X = 248.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 185.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 5
-    Viewport.Width = 237.000000000000000000
-    Viewport.Height = 237.000000000000000000
+    TabOrder = 8
+    Viewport.Width = 233.000000000000000000
+    Viewport.Height = 185.000000000000000000
   end
 end

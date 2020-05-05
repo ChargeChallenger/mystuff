@@ -1,6 +1,7 @@
 ﻿object Form5: TForm5
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'NailsApp - '#1043#1088#1072#1092#1080#1082
   ClientHeight = 504
   ClientWidth = 568
@@ -30,8 +31,8 @@
     TabOrder = 1
     RowCount = 0
     OnCellClick = StringGrid1CellClick
-    Viewport.Width = 501.000000000000000000
-    Viewport.Height = 136.000000000000000000
+    Viewport.Width = 505.000000000000000000
+    Viewport.Height = 161.000000000000000000
     object DateColumn1: TDateColumn
       Header = #1044#1072#1090#1072
       Size.Width = 81.000000000000000000

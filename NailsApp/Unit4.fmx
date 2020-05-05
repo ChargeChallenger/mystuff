@@ -1,7 +1,7 @@
 object FormPricelist: TFormPricelist
   Left = 100
   Top = 100
-  BorderIcons = [biSystemMenu]
+  BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = Single
   Caption = 'NailsApp - '#1055#1088#1072#1081#1089#1083#1080#1089#1090
   ClientHeight = 489
@@ -11154,8 +11154,8 @@ object FormPricelist: TFormPricelist
     Size.Height = 273.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 5
-    Viewport.Width = 221.000000000000000000
-    Viewport.Height = 269.000000000000000000
+    Viewport.Width = 225.000000000000000000
+    Viewport.Height = 273.000000000000000000
   end
   object Database: TStringGrid
     CanFocus = True
@@ -11169,8 +11169,8 @@ object FormPricelist: TFormPricelist
     TabStop = False
     Options = [ColLines, RowLines, Tabs, Header, AutoDisplacement]
     OnCellClick = DatabaseCellClick
-    Viewport.Width = 541.000000000000000000
-    Viewport.Height = 447.000000000000000000
+    Viewport.Width = 561.000000000000000000
+    Viewport.Height = 472.000000000000000000
     object Name: TStringColumn
       Locked = True
       Header = #1059#1089#1083#1091#1075#1072

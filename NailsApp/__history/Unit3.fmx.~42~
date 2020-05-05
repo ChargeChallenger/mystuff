@@ -1,7 +1,7 @@
 object FormClient: TFormClient
   Left = 100
   Top = 100
-  BorderIcons = [biSystemMenu, biMinimize]
+  BorderIcons = [biSystemMenu]
   BorderStyle = Single
   Caption = 'S'
   ClientHeight = 556
@@ -27,8 +27,8 @@ object FormClient: TFormClient
     TabStop = False
     Options = [ColLines, RowLines, Tabs, Header, AutoDisplacement]
     OnCellClick = DatabaseCellClick
-    Viewport.Width = 621.000000000000000000
-    Viewport.Height = 512.000000000000000000
+    Viewport.Width = 641.000000000000000000
+    Viewport.Height = 537.000000000000000000
     object Name: TStringColumn
       Locked = True
       Header = #1060#1048#1054
@@ -11215,7 +11215,7 @@ object FormClient: TFormClient
     Size.Height = 241.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 5
-    Viewport.Width = 237.000000000000000000
-    Viewport.Height = 237.000000000000000000
+    Viewport.Width = 241.000000000000000000
+    Viewport.Height = 241.000000000000000000
   end
 end
