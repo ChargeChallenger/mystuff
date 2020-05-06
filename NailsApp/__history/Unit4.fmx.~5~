@@ -1,0 +1,84 @@
+object FormPricelist: TFormPricelist
+  Left = 100
+  Top = 100
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'NailsApp - '#1055#1088#1072#1081#1089#1083#1080#1089#1090
+  ClientHeight = 590
+  ClientWidth = 849
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  Left = 100
+  Top = 100
+  DesignerMasterStyle = 0
+  object Database: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 144.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 521.000000000000000000
+    Size.Height = 513.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Options = [Editing, ColLines, RowLines, Tabs, Header, HeaderClick, AutoDisplacement]
+    Viewport.Width = 521.000000000000000000
+    Viewport.Height = 513.000000000000000000
+    object Name: TStringColumn
+      Header = #1091#1089#1083#1091#1075#1072
+      Size.Width = 289.000000000000000000
+    end
+    object Address: TStringColumn
+      Header = #1057#1090#1086#1080#1084#1086#1089#1090#1100' '
+      Size.Width = 207.000000000000000000
+    end
+  end
+  object NameEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    MaxLength = 100
+    Position.X = 144.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 289.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object PriceEdit: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    MaxLength = 100
+    Position.X = 464.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 201.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object AddBtn: TButton
+    Position.X = 248.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = #1044#1086#1073#1072#1074#1080#1090#1100
+    OnClick = AddBtnClick
+  end
+  object RmvBtn: TButton
+    Position.X = 552.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = #1059#1076#1072#1083#1080#1090#1100
+    OnClick = RmvBtnClick
+  end
+  object Current: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 568.000000000000000000
+    Text = 'Current'
+    TabOrder = 5
+  end
+end

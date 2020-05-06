@@ -1,0 +1,66 @@
+unit Unit2;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Edit, FMX.Controls.Presentation, System.hash;
+
+type
+  TFormRegistration = class(TForm)
+    Label1: TLabel;
+    Edit1: TEdit;
+    Label2: TLabel;
+    Edit2: TEdit;
+    Label3: TLabel;
+    Edit3: TEdit;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormRegistration: TFormRegistration;
+
+implementation
+
+{$R *.fmx}
+
+procedure TFormRegistration.Button1Click(Sender: TObject);
+var Users: TStringList; i: integer;
+begin
+  Users:=TStringList.Create;
+  Users.LoadFromFile('data/users.txt');
+  if (Edit1.Text<>'') and (Edit2.Text<>'') and (Edit3.Text<>'') then
+  begin
+    if Edit2.Text=Edit3.Text then
+    begin
+      i:=0;
+      while i<Users.Count do
+      begin
+        if Edit1.Text=Users.Strings[i] then
+        begin
+          ShowMessage('Такое имя уже есть!');
+          exit;
+        end;
+        i:=i+2;
+      end;
+      Users.Add(Edit1.Text);
+      Users.Add(System.Hash.THashMD5.GetHashString(Edit2.Text));
+      Users.SaveToFile('data/users.txt');
+      SetCurrentDir('data');
+      CreateDir(Edit1.Text + 'Data');
+      ShowMessage('Аккаунт успешно создан!');
+    end
+    else
+      ShowMessage ('Введённые пароли не совпадают!');
+  end
+  else
+    ShowMessage('Пустые поля!');
+end;
+
+end.

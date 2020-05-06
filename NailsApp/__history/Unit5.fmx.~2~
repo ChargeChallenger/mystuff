@@ -1,0 +1,140 @@
+﻿object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'Form5'
+  ClientHeight = 349
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Calendar1: TCalendar
+    Date = 43949.000000000000000000
+    Position.X = 32.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 180.000000000000000000
+    Size.Height = 160.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnDayClick = Calendar1DayClick
+  end
+  object StringGrid1: TStringGrid
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 248.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 345.000000000000000000
+    Size.Height = 161.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 325.000000000000000000
+    Viewport.Height = 136.000000000000000000
+    object DateColumn1: TDateColumn
+      Header = #1044#1072#1090#1072
+      Size.Width = 57.000000000000000000
+    end
+    object TimeColumn1: TTimeColumn
+      Header = #1042#1088#1077#1084#1103
+      Size.Width = 63.000000000000000000
+    end
+    object StringColumn1: TStringColumn
+      Header = #1050#1083#1080#1077#1085#1090
+    end
+    object StringColumn2: TStringColumn
+      Header = #1059#1089#1083#1091#1075#1072
+    end
+  end
+  object ComboEdit1: TComboEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    ItemHeight = 19.000000000000000000
+    ItemIndex = -1
+    Position.X = 248.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ComboEdit2: TComboEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    ItemHeight = 19.000000000000000000
+    ItemIndex = -1
+    Position.X = 432.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object TimeEdit1: TTimeEdit
+    Time = 0.841429918981481500
+    Position.X = 32.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+  end
+  object Календарь: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 32.000000000000000000
+    Text = #1050#1072#1083#1077#1085#1076#1072#1088#1100
+    TabOrder = 5
+  end
+  object График: TLabel
+    Position.X = 248.000000000000000000
+    Position.Y = 32.000000000000000000
+    Text = #1043#1088#1072#1092#1080#1082
+    TabOrder = 6
+  end
+  object Время: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 224.000000000000000000
+    Text = #1042#1088#1077#1084#1103
+    TabOrder = 7
+  end
+  object Клиент: TLabel
+    Position.X = 248.000000000000000000
+    Position.Y = 224.000000000000000000
+    Text = #1050#1083#1080#1077#1085#1090
+    TabOrder = 8
+  end
+  object Услуга: TLabel
+    Position.X = 432.000000000000000000
+    Position.Y = 224.000000000000000000
+    Text = #1059#1089#1083#1091#1075#1072
+    TabOrder = 9
+  end
+  object Button1: TButton
+    Position.X = 248.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 345.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Text = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1073#1088#1072#1085#1085#1086#1077
+  end
+  object TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = #1044#1086#1073#1072#1074#1080#1090#1100
+  end
+  object Button2: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 312.000000000000000000
+    Size.Width = 561.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    Text = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1074#1099#1073#1088#1072#1085#1085#1099#1081' '#1076#1077#1085#1100
+  end
+  object Label1: TLabel
+    Position.X = 288.000000000000000000
+    Position.Y = 32.000000000000000000
+    TabOrder = 13
+  end
+end

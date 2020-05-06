@@ -1,21 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<ProjectSortOrder AutoSort="0" SortType="0">
-    <File Path="..\..\mystuff"/>
-    <File Path="..\NailsApp"/>
-    <File Path="..\NailsApp\Unit1.pas"/>
-    <File Path="..\NailsApp\Unit1.fmx"/>
-    <File Path="..\NailsApp\Unit2.pas"/>
-    <File Path="..\NailsApp\Unit2.fmx"/>
-    <File Path="..\NailsApp\Unit3.pas"/>
-    <File Path="..\NailsApp\Unit3.fmx"/>
-    <File Path="..\NailsApp\Unit4.pas"/>
-    <File Path="..\NailsApp\Unit4.fmx"/>
-    <File Path="..\NailsApp\Unit5.pas"/>
-    <File Path="..\NailsApp\Unit5.fmx"/>
+    <File Path="Unit1.pas"/>
+    <File Path="Unit2.pas"/>
+    <File Path="Unit3.pas"/>
+    <File Path="Unit4.pas"/>
+    <File Path="Unit5.pas"/>
   </ProjectSortOrder>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.921,D:\Documents\Git\mystuff\NailsApp\Project1.dproj=D:\Documents\Git\mystuff\Nails\NailsApp.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.921,D:\Documents\Git\mystuff\Nails\NailsApp.dproj=D:\Documents\Git\mystuff\NailsApp\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.795,=D:\Documents\Git\mystuff\NailsApp\Style.vsf</Transaction>
     <Transaction>1899.12.30 00:00:00.000.077,D:\Documents\Git\mystuff\NailsApp\Style.vsf=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.445,=D:\Documents\Git\mystuff\NailsApp\Style.vsf</Transaction>

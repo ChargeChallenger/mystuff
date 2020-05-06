@@ -1,0 +1,51 @@
+unit Unit5;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, System.Rtti,
+  FMX.Grid.Style, FMX.Grid, FMX.StdCtrls, FMX.DateTimeCtrls, FMX.Edit,
+  FMX.ComboEdit, FMX.ScrollBox, FMX.Controls.Presentation, FMX.Calendar;
+
+type
+  TForm5 = class(TForm)
+    Calendar1: TCalendar;
+    StringGrid1: TStringGrid;
+    ComboEdit1: TComboEdit;
+    ComboEdit2: TComboEdit;
+    TimeEdit1: TTimeEdit;
+    Календарь: TLabel;
+    График: TLabel;
+    Время: TLabel;
+    Клиент: TLabel;
+    Услуга: TLabel;
+    Button1: TButton;
+    DateColumn1: TDateColumn;
+    TimeColumn1: TTimeColumn;
+    StringColumn1: TStringColumn;
+    StringColumn2: TStringColumn;
+    Button2: TButton;
+    Label1: TLabel;
+    procedure Calendar1DayClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+  SelectedDate: TDate;
+
+implementation
+
+{$R *.fmx}
+
+procedure TForm5.Calendar1DayClick(Sender: TObject);
+begin
+  SelectedDate:=Calendar1.Date;
+  Label1.Text:=' на '+DateTimeToStr(SelectedDate);
+end;
+
+end.
